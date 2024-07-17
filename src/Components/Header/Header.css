@@ -1,0 +1,43 @@
+@import url('../../index.css');
+.flex-section-head {
+  width: 100%;
+  height: 12rem;
+  border: 1pt solid black;
+  background-color: var(--backGr-1);
+}
+/*? Principais */
+.head-main {
+  width: 100%;
+  height: 70%;
+  border: 1pt solid red;
+  display: flex;
+  flex-wrap: wrap row;
+  align-items: center;
+  justify-content: space-around;
+}
+.head-navigation {
+  width: 100%;
+  height: 28%;
+  border: 1pt solid green;
+}
+/*? Itens  */
+.logo-img {
+  width: 15.813rem;
+  height: 2.75rem;
+  
+  border: 1pt solid blue;
+}
+.logo-img img {
+  width: 100%; 
+  min-width: 10rem;
+  min-height: 1.75rem;
+}
+.search-input {
+  width: 35%;
+  height: 40%;
+}
+
+.search-input input {
+  width: 100%;
+  height: 100%;
+}
