@@ -8,17 +8,16 @@ function App() {
 
   return (
     <>
-      
       <BrowserRouter>
       <Routes>
+        
+          <Route  index element={< Home/>}/>
 
-          <Route path="/Home" element={<Home/>}/>
+          <Route path="products" element={<Products/>} />
 
-          <Route path="Products" element={<Products/>} />
+          <Route path="categories" element={<Categories/>}/>
 
-          <Route path="Categories" element={<Categories/>}/>
-
-          <Route path="Requests" element={<Requests />}/>
+          <Route path="requests" element={<Requests />}/>
       </Routes>
     </BrowserRouter>
     </>
