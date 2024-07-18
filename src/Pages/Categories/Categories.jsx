@@ -1,11 +1,9 @@
 import { Header } from "../../Components/Header/Header";
-export function Home() {
-  
+export const Categories = () => {
   return (
     <>
       <Header/>
-      <h1>Home</h1>
+      <h1> Categories </h1>
     </>
   )
 }
-

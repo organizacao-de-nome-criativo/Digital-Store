@@ -1,0 +1,28 @@
+@import url('../../index.css');
+.navegation {
+  width: 85%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap row;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: center;
+  gap: 30px;
+
+}
+.navegation li {
+  list-style-type: none;
+}
+.navegation .link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  letter-spacing: 1px;
+  height: 100%;
+
+}
+.navegation .link:hover {
+  color: var(--theme-color);
+  border-radius: 2px;
+  border-bottom: 2px solid var(--theme-color);
+}

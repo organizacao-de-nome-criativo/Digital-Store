@@ -1,11 +1,9 @@
 import { Header } from "../../Components/Header/Header";
-export function Home() {
-  
+export const Products = () => {
   return (
     <>
-      <Header/>
-      <h1>Home</h1>
+    <Header/>
+    <h1> Products </h1>
     </>
   )
 }
-

@@ -2,30 +2,28 @@
 .flex-section-head {
   width: 100%;
   height: 12rem;
-  border: 1pt solid black;
   background-color: var(--backGr-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
 }
 /*? Principais */
 .head-main {
   width: 100%;
   height: 70%;
-  border: 1pt solid red;
   display: flex;
   flex-wrap: wrap row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 38px;
 }
-.head-navigation {
-  width: 100%;
-  height: 28%;
-  border: 1pt solid green;
-}
+
 /*? Itens  */
 .logo-img {
   width: 15.813rem;
   height: 2.75rem;
-  
-  border: 1pt solid blue;
 }
 .logo-img img {
   width: 100%; 
@@ -35,9 +33,58 @@
 .search-input {
   width: 35%;
   height: 40%;
+  position: relative;
+  display: flex;
+  align-items: center;  
 }
 
 .search-input input {
   width: 100%;
   height: 100%;
+  background-color: var(--backGr-2);
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  outline: none;
+  position: absolute;
+  z-index: 1;
+  font-size: 15px;
+}
+.search-input img {
+  width: 6%;
+  margin-right: 10px;
+  min-width: 1.5rem;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  cursor: pointer;
+}
+.user-register {
+  width: 20%;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-register a {
+  color: black;
+  letter-spacing: 1px;
+}
+.cart-ico {
+  width: 1.8rem;
+}
+.cart-ico img {
+ width: 100%;
+ cursor: pointer;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+  .user-register {
+    flex-direction: column-reverse;
+    height: 4.5rem;
+    gap: 10px;
+    
+  }
+
 }
