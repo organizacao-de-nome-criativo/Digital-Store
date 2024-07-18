@@ -1,0 +1,81 @@
+@import url('../../index.css');
+
+.carousel {
+    width: 100%;
+    height: 32rem;
+    background-color: var(--backGr-2);
+
+}
+.slider {
+    display: block;
+    height: 100%;
+    width: 95%;
+    margin: auto;
+    position: relative;
+    margin-top: 20px;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    background-color:#CCCCCC;
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: .8rem;
+    position: absolute;
+    width: .8rem;
+    z-index: 10;
+    border-radius: 50%;
+}
+.slider li:nth-child(1) label {
+    left: 48%;
+}
+
+.slider li:nth-child(2) label {
+    left: 50%;
+}
+
+.slider li:nth-child(3) label {
+    left: 52%;
+}
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+   
+    transition: linear;
+    animation-duration: .5s;
+    
+}
+.slider li input:checked ~ label{
+    background-color: var( --theme-color);
+    
+}
+@keyframes translate {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+         transform: translateX(-100%);
+    }
+}
