@@ -1,11 +1,12 @@
 import { Header } from "../../Components/Header/Header";
-import { Carrosel } from "../../Components/Carrosel/Carrosel";
+import { Carousel } from "../../Components/Carousel/Carousel";
 export function Home() {
   
   return (
     <>
       <Header/>
-      <Carrosel/>
+      <Carousel/>
+      
     </>
   )
 }
