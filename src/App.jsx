@@ -14,7 +14,6 @@ function App() {
           <Route path="categories" element={<Categories />} />
           <Route path="requests" element={<Requests />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );

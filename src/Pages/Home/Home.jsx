@@ -6,7 +6,7 @@ export function Home() {
     <>
       <Header/>
       <Carousel/>
-      
+      <Footer/>
     </>
   )
 }

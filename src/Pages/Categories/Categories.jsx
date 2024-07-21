@@ -4,6 +4,7 @@ export const Categories = () => {
     <>
       <Header/>
       <h1> Categories </h1>
+      <Footer/>
     </>
   )
 }

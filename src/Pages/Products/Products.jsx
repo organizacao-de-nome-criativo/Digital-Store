@@ -4,6 +4,7 @@ export const Products = () => {
     <>
     <Header/>
     <h1> Products </h1>
+    <Footer/>
     </>
   )
 }

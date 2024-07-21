@@ -4,6 +4,7 @@ export const Requests = () => {
     <>
       <Header/>
       <h1>Requests </h1>
+      <Footer/>
     </>
   )
 }
