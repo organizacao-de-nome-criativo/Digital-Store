@@ -1,4 +1,4 @@
-export const FooterUl = ({ lista, titulo, classe, address, contato }) => {
+export const FooterUl = ({ lista, titulo, classe, address, contato, id}) => {
   if (address) {
     return (
       <div className={classe}>
@@ -14,7 +14,7 @@ export const FooterUl = ({ lista, titulo, classe, address, contato }) => {
       <h2>{titulo}</h2>
       <ul>
         {lista.map((nome) => (
-          <li>{nome}</li>
+          <li><a href="">{nome}</a></li>
         ))}
       </ul>
     </div>

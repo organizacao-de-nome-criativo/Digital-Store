@@ -1,9 +1,5 @@
 import "./Footer.css";
 
-import { Digital } from "./Digital";
-import { Is } from "./Is";
-import { Tw } from "./TW";
-import { Fc } from "./Fc";
 import { FooterUl } from "./FooterUl";
 
 export const Footer = () => {
@@ -12,16 +8,17 @@ export const Footer = () => {
       <section className="section-footer">
         <div className="first-div-footer">
           <div className="div-interna-1">
-            <Digital />
+            <div className="footer-img"> 
+              <img src="src/assets/logo-footer.svg" alt=""/>
+            </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non
-              maximus lorem. Ut laoreet leo eu ex ullamcorper,
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.  
             </p>
           </div>
           <div className="icons">
-            <Fc width={1} />
-            <Is color={"white"} width={1} />
-            <Tw color={"white"} />
+           <a href=""><img src="src/assets/facebook.svg" alt=""/> </a> 
+            <a href="https://www.instagram.com/digitalcollegebr/"><img src="src/assets/instagram.svg" alt=""/></a>
+            <a href=""><img src="src/assets/twitter.svg" alt=""/></a>
           </div>
         </div>
         <div className="second-div-footer">
@@ -55,7 +52,7 @@ export const Footer = () => {
           />
         </div>
       </section>
-      <p> @ 2022 Digital College</p>
+      <p className="copy" >@ 2022 Digital College</p>
     </footer>
   );
 };
