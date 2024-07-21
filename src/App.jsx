@@ -9,12 +9,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-
+          <Route  index element={< Home/>}/>
           <Route path="products" element={<Products />} />
-
           <Route path="categories" element={<Categories />} />
-
           <Route path="requests" element={<Requests />} />
         </Routes>
         <Footer />

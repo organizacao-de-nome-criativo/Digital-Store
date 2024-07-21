@@ -14,7 +14,9 @@ export const Header = () => {
         </div>
           <div className="user-register">
             <a href="">Cadastre-se</a>
-            <Button link={'#'} nome={'Entrar'}/> 
+            <div className="enter-button">
+              <Button link={'#'} nome={'Entrar'}/> 
+            </div>
           </div>
           <div className="cart-ico">
             <img src="src/assets/carrinho-de-compras.png" alt=""/>
