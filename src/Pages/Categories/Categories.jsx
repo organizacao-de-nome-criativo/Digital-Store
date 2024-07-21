@@ -2,8 +2,8 @@ import { Header } from "../../Components/Header/Header";
 export const Categories = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <h1> Categories </h1>
     </>
-  )
-}
+  );
+};

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "nome": "sapato1",
+    "categoria": "categoria1",
+    "custo": "R$100",
+    "imageg": "./"
+  },
+  {
+    "id": "2",
+    "nome": "sapato2",
+    "categoria": "categoria2",
+    "custo": "R$120",
+    "imageg": "./"
+  },
+  {
+    "id": "3",
+    "nome": "sapato3",
+    "categoria": "categoria3",
+    "custo": "R$130",
+    "imageg": "./"
+  },
+  {
+    "id": "4",
+    "nome": "sapato4",
+    "categoria": "categoria4",
+    "custo": "R$140",
+    "imageg": "./"
+  },
+  {
+    "id": "5",
+    "nome": "sapato5",
+    "categoria": "categoria5",
+    "custo": "R$150",
+    "imageg": "./"
+  }
+]

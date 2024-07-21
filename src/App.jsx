@@ -1,24 +1,24 @@
-import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
-S;
+import { Route as Routes, Route } from "react-router-dom";
+
 import { Home } from "../src/Pages/Home/Home";
 import { Products } from "../src/Pages/Products/Products";
-// import { Categories } from "../src/Pages/Categories/Categories";
+import { Categories } from "../src/Pages/Categories/Categories";
 import { Requests } from "../src/Pages/Requests/Requests";
 import { Detalhes } from "./Components/Detalhes";
 import { Header } from "./Components/Header/Header";
 function App() {
   return (
     <>
-      <Header />
-      <Switch>
-        <Route path="/" Component={<Home />} />
+      <Routes>
+        <Route exact path="/" component={Home} />
 
-        <Route path="/Products" Component={<Products />} />
+        <Route exact path="/produtos" component={Products} />
 
-        <Route path="/Categories" Component={<Detalhes />} />
+        <Route exact path="categorias" Component={Categories} />
 
-        <Route path="/Requests" Component={<Requests />} />
-      </Switch>
+        <Route exact path="/Requests" Component={Requests} />
+        <Route exact path="/produtos:elemento" Component={Detalhes} />
+      </Routes>
     </>
   );
 }
