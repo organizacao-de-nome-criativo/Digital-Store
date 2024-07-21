@@ -1,8 +1,4 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "../src/Pages/Home/Home";
 import { Products } from "../src/Pages/Products/Products";
 import { Categories } from "../src/Pages/Categories/Categories";
