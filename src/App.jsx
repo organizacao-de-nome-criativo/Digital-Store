@@ -3,24 +3,21 @@ import { Home } from "../src/Pages/Home/Home";
 import { Products } from "../src/Pages/Products/Products";
 import { Categories } from "../src/Pages/Categories/Categories";
 import { Requests } from "../src/Pages/Requests/Requests";
+import { Footer } from "./Components/Footer/Footer";
 function App() {
-  
-
   return (
     <>
       <BrowserRouter>
-      <Routes>
+        <Routes>
           <Route  index element={< Home/>}/>
-
-          <Route path="products" element={<Products/>} />
-
-          <Route path="categories" element={<Categories/>}/>
-
-          <Route path="requests" element={<Requests />}/>
-      </Routes>
-    </BrowserRouter>
+          <Route path="products" element={<Products />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="requests" element={<Requests />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
