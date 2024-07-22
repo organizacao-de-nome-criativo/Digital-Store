@@ -20,8 +20,7 @@
 }
 .content-text {
   width: 90%;
-  height: 10%;
-  border: 1pt solid yellow;
+  height: 18%;
 }
 .content-text .subtitle {
   font-size: 24px;
@@ -29,15 +28,17 @@
   font-weight: bold;
   align-self: flex-start;
 }
-.content-cards {
+.position-cards {
   width: 90%;
-  border: 1pt solid blue;
   height: 100%;
   display: flex;
   flex-direction: row;
-  align-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 1rem;
+  border: 1pt solid red;
 }
-.content-cards .promoCard {
+.position-cards .promoCard {
   flex: 1;
 }
 .highlights-icons {
