@@ -1,4 +1,4 @@
-import { Route as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { Home } from "../src/Pages/Home/Home";
 import { Products } from "../src/Pages/Products/Products";
@@ -10,14 +10,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" component={Home} />
+        <Route path="/" element={<Home />} />
 
-        <Route exact path="/produtos" component={Products} />
+        <Route path="/produto" element={<Products />} />
 
-        <Route exact path="categorias" Component={Categories} />
+        <Route path="/categorias" element={<Categories />} />
 
-        <Route exact path="/Requests" Component={Requests} />
-        <Route exact path="/produtos:elemento" Component={Detalhes} />
+        <Route path="/Requests" element={<Requests />} />
+        <Route path="/categorias/:elemento" element={<Detalhes />} />
       </Routes>
     </>
   );

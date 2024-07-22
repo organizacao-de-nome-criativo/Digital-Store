@@ -1,6 +1,7 @@
-import "./nav.css";
+import "./nav.css"; //
 import { Link } from "react-router-dom";
 import React from "react";
+
 export const Nav = () => {
   return (
     <nav className="navegation">
@@ -8,11 +9,11 @@ export const Nav = () => {
         Home
       </Link>
 
-      <Link to="/produtos" className="link">
+      <Link to="/produto" className="link">
         Produtos
       </Link>
 
-      <Link to="categorias" className="link">
+      <Link to="/categorias" className="link">
         Categorias
       </Link>
 

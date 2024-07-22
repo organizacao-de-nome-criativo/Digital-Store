@@ -23,7 +23,8 @@
   text-decoration: none;
   color: var(--theme-color);
 }
-.navegation .link:hover {
+.navegation .link:hover,
+.navegation .link:active {
   color: var(--theme-color);
   border-radius: 2px;
   border-bottom: 2px solid var(--theme-color);
