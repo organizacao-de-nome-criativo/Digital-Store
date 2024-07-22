@@ -1,5 +1,6 @@
+import { useState } from "react";
 import "./nav.css";
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 export const Nav = () => {
   return (
     <nav className="navegation">
