@@ -99,11 +99,12 @@ footer h2 {
   height: 100%;
   width: 50%;
 }
-.div-h2 {
+.div-h2-footer {
   display: flex;
   width: 50%;
   height: 80%;
   justify-content: space-evenly;
+  border: none;
 }
 .div-footer-grand {
   list-style: none;

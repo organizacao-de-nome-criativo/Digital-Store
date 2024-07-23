@@ -3,9 +3,9 @@ import { Footer } from "../../Components/Footer/Footer";
 export const Categories = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <h1> Categories </h1>
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};

@@ -1,0 +1,69 @@
+@import url('../../../src/index.css');
+.featured-flex-section {
+  width: 100%;
+  height: 34.563rem;
+  background-color: var(--backGr-1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.featured-product {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.featured-product-image {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.featured-product-image img {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+.featured-background {
+  background-image: linear-gradient(#4400ff27, #FFFFFF );
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+}
+.featured-content-text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.featured-content-text .subtitle {
+  font-size: 0.875rem;
+  letter-spacing: .1rem;
+  color: var(--theme-color);
+  font-weight: bold;
+}
+.featured-content-text .title{
+  color: var( --text-color);
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  letter-spacing: .2rem;
+}
+.featured-content-text .paragraph {
+  color: var( --text-color);
+  font-size: 1rem;
+  line-height: 2rem;
+  letter-spacing: .1rem;
+}
+.featured-button {
+  width: 35%;
+  height: 8%;
+}
