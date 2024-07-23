@@ -1,0 +1,121 @@
+main {
+  background-color: var(--main-color);
+  padding: 4rem;
+  display: flex;
+  flex-flow: column;
+  /* gap: 3rem; */
+}
+
+.span-paragraph-1 {
+  color: var(--text-color);
+  font-weight: 700;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+.first-div-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.first-div-main p {
+  width: max-content;
+}
+.first-div-main div {
+  width: 20.75rem;
+  border: 0.063rem solid;
+  border-radius: 0.25rem;
+  height: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.span-2-paragraph {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+aside {
+  background-color: #fff;
+  padding: 1.5rem;
+
+  width: 19.25rem;
+  height: 45rem;
+}
+aside h2 {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+.div-h2 {
+  border-bottom: solid 2px rgba(204, 204, 204, 0.637);
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding-bottom: 1.5rem;
+}
+.form-div-filho {
+  display: flex;
+  flex-flow: column;
+}
+.div-2 p {
+  border: solid 2px black;
+  color: black;
+}
+.div-card {
+  width: 20rem;
+
+  height: 27.438;
+
+  margin: 0.5rem;
+}
+
+.div-card img {
+  height: 13rem;
+  width: 14rem;
+}
+.div-imagem {
+  background-color: #fff;
+  height: 20.063;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0px 2px 10px -2px gray;
+}
+.div-imagem:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.componente-json {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+
+  justify-content: end;
+}
+.paragraph p:nth-child(1) {
+  color: gray;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.paragraph p:nth-child(2) {
+  color: rgba(71, 71, 71, 1);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.047rem;
+  line-height: 2.375rem;
+}
+.paragraph p:nth-child(3) {
+  font-size: 1.5rem;
+  color: rgba(31, 31, 31, 1);
+  font-weight: 700;
+}
+.span-paragrah {
+  text-decoration: line-through;
+  color: rgba(143, 143, 143, 1);
+}

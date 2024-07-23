@@ -1,0 +1,84 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "imgagem": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 3",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "../../assets/produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "custo": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    },
+    {
+      "id": "1",
+      "name": "sapato 1",
+      "categoria": "tênis",
+      "cuso": "30",
+      "valorAntigo": "400",
+      "img": "produc-image-2.png"
+    }
+  ]
+}

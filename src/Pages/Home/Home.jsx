@@ -5,15 +5,13 @@ import { Featureds } from "../../Components/FeaturedSection/Featureds";
 import { HighlightsSection } from "../../Components/HighlightsSection/HighlightsSection";
 
 export function Home() {
-  
   return (
     <>
-      <Header/>
-      <Carousel/>
+      <Header />
+      <Carousel />
+      <HighlightsSection />
       <Featureds/>
-      < HighlightsSection/>
       <Footer/>
     </>
-  )
+  );
 }
-
