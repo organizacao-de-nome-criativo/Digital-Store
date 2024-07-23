@@ -7,9 +7,11 @@ export const Carousel = ({children}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     "src/assets/slide-1-tenis-version1.png",
-    "src/assets/slide-1-tenis-version2.png",
-    "src/assets/slide-1-tenis-version3.png",
-    "src/assets/slide-1-tenis-version4.png",
+    "src/assets/produc-image.png", 
+    "src/assets/produc-image-2.png",
+    "src/assets/produc-image-3.png",
+    "src/assets/produc-image-4.png",
+    "src/assets/produc-image-5.png",
   ];
 
   const nextSlide = () => {
