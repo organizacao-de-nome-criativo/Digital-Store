@@ -1,9 +1,9 @@
 import "./Header.css";
 import { Button } from "../Button/Button";
 import { Nav } from "../Nav/Nav";
-export const Header = () => {
+export const Header = ({style}) => {
   return (
-    <header className="flex-section-head">
+    <header className={"flex-section-head " + style}>
       <section className="head-main">
        <figure className="logo-img">
         <img src="src/assets/logo-digital-store.png" alt="" />
