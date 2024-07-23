@@ -14,7 +14,7 @@ export const Products = () => {
   });
   return (
     <>
-      <Header />
+      <Header style={"shadow"}/>
 
       <main>
         <div className="first-div-main">
@@ -36,7 +36,7 @@ export const Products = () => {
           <aside>
             <div>
               <div className="div-h2">
-                <h2>Filtro por</h2>
+                <h2>Filtrar por</h2>
               </div>
               <form action="">
                 <div>
@@ -100,11 +100,11 @@ export const Products = () => {
                   <h3>estado</h3>
                   <div>
                     <div>
-                      <input type="radio" />
+                      <input type="radio" name="estado" defaultChecked/>
                       <label htmlFor="">novo</label>
                     </div>
-                    <input type="radio" />
-                    <label htmlFor="">usuário</label>
+                    <input type="radio" name="estado"/>
+                    <label htmlFor="">usado</label>
                   </div>
                 </div>
               </form>
