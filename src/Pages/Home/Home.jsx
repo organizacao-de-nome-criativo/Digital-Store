@@ -3,14 +3,12 @@ import { Carousel } from "../../Components/Carousel/Carousel";
 import { Footer } from "../../Components/Footer/Footer";
 import { HighlightsSection } from "../../Components/HighlightsSection/HighlightsSection";
 export function Home() {
-  
   return (
     <>
-      <Header/>
-      <Carousel/>
-      < HighlightsSection/>
-      <Footer/>
+      <Header />
+      <Carousel />
+      <HighlightsSection />
+      <Footer />
     </>
-  )
+  );
 }
-
