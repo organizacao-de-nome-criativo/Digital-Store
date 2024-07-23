@@ -1,0 +1,71 @@
+@import url("../../index.css");
+.promo-card-body {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: relative;
+  background-color: var( --cardPromoBackGr-color);
+  
+}
+.promo-card-content {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  padding-left: 20px;
+}
+.promo-card-content-text {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.promo-card-content-text .promo-value {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: .75px;
+  background-color: var(--promoBackGr-color);
+  border-radius: 29px;
+  font-weight: 700;
+  padding: 3px 0px 6px 10px  ;
+  color: var(--text-color);
+  width: 5.5rem;
+  height: 1.8rem;
+ 
+}
+.promo-card-content-text .promo-name {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+  color: var(--footer-backgroud-color);
+}
+.promo-button-position {
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  z-index: 2;
+}
+.promo-button {
+  background-color:#F5F5F5;
+  color: var(--theme-color);
+  letter-spacing: 0.75px;
+  font-size: 16px;
+  transition-duration: .5s;
+}
+.promo-button:hover {
+  transform: scale(1.1);
+  background-color: #F5F5F5;
+  color: var(--theme-color);
+}
+.promo-card-content img {
+  width: 50%;
+  min-width: 8rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
