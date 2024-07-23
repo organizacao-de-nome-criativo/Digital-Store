@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 export const ConsumoJson = () => {
   return (
     <>
-      {produtos.produtos.map((elemento) => (
+     {produtos.produtos.map((elemento) => (
         <div className="div-card">
           <div className="div-imagem">
             <Link to={`/Detalhes/${elemento.id}`} className="link-imagem">
