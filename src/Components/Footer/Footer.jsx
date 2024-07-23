@@ -22,7 +22,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="second-div-footer">
-          <div className="div-h2">
+          <div className="div-h2-footer">
             <FooterUl
               lista={[
                 "sobre drip store",
