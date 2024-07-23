@@ -1,4 +1,4 @@
-import produtos from "../../../public/produtos.json";
+import produtos from "../../json/produtos.json"
 import "./Products.css";
 
 // export const ConsumoJson = () => {
@@ -19,7 +19,7 @@ export const ConsumoJson = () => {
         <div className="div-card">
           <div className="div-imagem">
             <Link to={`/Detalhes/${elemento.id}`} className="link-imagem">
-              <img src={foto} alt={`um sapato do tipo ${elemento.name}`} />
+              <img src={ `src/assets/${elemento.img}`} alt={`um sapato do tipo ${elemento.name}`} />
             </Link>
           </div>
           <div className="paragraph">

@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
-import json from "../../../public/produtos.json";
+import json from "../../json/produtos.json"
+import { Footer } from "../../Components/Footer/Footer";
+import { Header } from "../../Components/Header/Header";
+
 export const Details = ({ props }) => {
   const id = useParams();
   console.log(id);
@@ -9,7 +12,12 @@ export const Details = ({ props }) => {
 
   return (
     <>
-      <h1>{ItemEscolhido.name}</h1>
+    <Header/>
+    <h1>{ItemEscolhido.name}</h1>
+
+
+     
+    <Footer/>
     </>
   );
 };

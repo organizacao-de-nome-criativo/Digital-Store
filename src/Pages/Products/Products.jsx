@@ -1,6 +1,6 @@
 import { Header } from "../../Components/Header/Header";
 import { Footer } from "../../Components/Footer/Footer";
-import produtos from "../../../public/produtos.json";
+import produtos from "../../json/produtos.json"
 import setinha from "../../assets/setinha2.svg";
 import "./Products.css";
 import { ConsumoJson } from "./ConsumoJson";
