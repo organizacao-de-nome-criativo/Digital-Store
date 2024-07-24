@@ -4,6 +4,8 @@ import { Products } from "../src/Pages/Products/Products";
 import { Categories } from "./Pages/Categories/Categories";
 import { Requests } from "../src/Pages/Requests/Requests";
 import { Details } from "./Pages/Products/Details";
+import PageNotFound from "./Pages/PageNotFound/PageNotFoun";
+
 function App() {
   return (
     <>
@@ -14,6 +16,7 @@ function App() {
           <Route path="categories" element={<Categories />} />
           <Route path="requests" element={<Requests />} />
           <Route path="/Detalhes/:id" element={<Details />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </>
