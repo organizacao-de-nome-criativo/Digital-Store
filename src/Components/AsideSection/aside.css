@@ -1,0 +1,8 @@
+@import url('../../../src/index.css');
+
+.side-bar-body {
+    height: 45rem;
+    width: 30%;
+    border: 1pt solid blue;
+    align-self: flex-start;
+}

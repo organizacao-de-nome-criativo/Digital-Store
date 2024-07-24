@@ -15,9 +15,6 @@ export const Details = ({ props }) => {
     <>
     <Header/>
     <h1>{ItemEscolhido.name}</h1>
-
-
-     
     <Footer/>
     </>
   );
