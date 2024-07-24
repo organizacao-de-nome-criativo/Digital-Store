@@ -4,7 +4,8 @@ export const Requests = () => {
   return (
     <>
       <Header/>
-      <h1>Requests </h1>
+      <h1>Requests (também em obras) ;D</h1>
+      <img src="src/assets/nao-apague-lerdao.gif" alt=""></img>
       <Footer/>
     </>
   )

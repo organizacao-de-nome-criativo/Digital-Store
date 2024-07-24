@@ -31,9 +31,7 @@ export const Products = () => {
           </div>
         </div>
         <section>
-          
           <AsideSection/>
-
           <div className="componente-json">
             <ConsumoJson />
           </div>
