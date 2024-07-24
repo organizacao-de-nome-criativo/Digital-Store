@@ -16,20 +16,9 @@ export const Details = ({ props }) => {
 
   return (
     <>
-      <Header />
-      <main>
-        <p></p>
-        <section>
-          <div className="slider">
-            <div className="button left"></div>
-            <div className="button rigth"></div>
-            <div className="imagem"></div>
-          </div>
-        </section>
-        <section></section>
-      </main>
-
-      <Footer />
+    <Header/>
+    <h1>{ItemEscolhido.name}</h1>
+    <Footer/>
     </>
   );
 };

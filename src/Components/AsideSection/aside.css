@@ -1,0 +1,65 @@
+@import url("../../../src/index.css");
+
+.aside-bar-body {
+  height: 35rem;
+  width: 30%;
+  align-self: flex-start;
+  background-color: var(--backGr-1);
+  position: sticky;
+  top: 0;
+  padding: 1.5rem;
+  text-transform: capitalize;
+}
+.aside-title-container {
+  border-bottom: solid 2px rgba(204, 204, 204, 0.637);
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding-bottom: 1.5rem;
+}
+.aside-subtitle {
+  font-size: 14px;
+  line-height: 2.5rem;
+}
+.aside-bar-body h2 {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+.aside-bar-body input {
+  opacity: 0;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+.aside-bar-body span {
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+.aside-bar-body input + span:before {
+  border: 1px solid var(--text-color);
+  content: " ";
+  display: inline-flex;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.aside-bar-body .aside-estado-input + span:before {
+  border-radius: 50%;
+}
+.aside-bar-body input:checked + span:before {
+  background-color: var(--theme-color);
+  color: white;
+  content: "✔";
+  text-align: center;
+  font-size: 15px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}

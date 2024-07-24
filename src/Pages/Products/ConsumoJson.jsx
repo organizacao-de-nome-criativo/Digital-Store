@@ -1,15 +1,6 @@
 import produtos from "../../json/produtos.json"
 import "./Products.css";
 
-// export const ConsumoJson = () => {
-//   return (
-//     <>
-//       {produtos.produtos.map((produto, index) => (
-//         <p key={index}> {produto}</p>
-//       ))}
-//     </>
-//   );
-// };
 import foto from "../../assets/produc-image-3.png";
 import { Link } from "react-router-dom";
 export const ConsumoJson = () => {

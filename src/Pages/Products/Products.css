@@ -1,16 +1,17 @@
-@import url('../../index.css');
+@import url("../../index.css");
 main {
   background-color: var(--main-color);
   padding: 4rem;
   display: flex;
   flex-flow: column;
+  height: auto;
+  width: 100%;
 }
 .shadow {
   box-shadow: -2px 8px 8px 0px rgba(226, 228, 231, 0.263);
   position: relative;
   z-index: 999;
 }
-
 .span-paragraph-1 {
   color: var(--text-color);
   font-weight: 700;
@@ -45,69 +46,7 @@ section {
   justify-content: space-between;
   width: 100%;
 }
-aside {
-  background-color: #fff;
-  padding: 1.5rem;
-  width: 19.25rem;
-  height: 45rem;
-  position: sticky;
-  border: 1pt solid red;
-  top:0;
-  text-transform: capitalize;
-}
-aside input {
-  opacity: 0;
-  position: absolute;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-}
-aside label {
-  line-height: 22px;
-  font-size: 14px;
-}
-aside input + label:before {
-  border: 1px solid #5D5C5C;
-  content: " ";
-  display: inline-flex;
-  font: 16px/1em sans-serif;
-  height: 16px;
-  margin: 0 .25em 0 0;
-  padding:0;
-  vertical-align: top;
-  width: 16px;
-  border-radius:4px;
-  cursor: pointer;
-}
-aside input[type="radio"] + label:before {
-  border-radius: 50%;
-}
-aside input:checked + label:before {
-  background-color: var(--theme-color);
-  color: white;
-  content: "✔";
-  text-align: center;
-}
-aside h2 {
-  font-size: 1rem;
-  color: var(--text-color);
-  font-weight: 700;
-}
-.div-h2 {
-  border-bottom: solid 2px rgba(204, 204, 204, 0.637);
-  width: 100%;
-  display: flex;
-  justify-content: start;
-  padding-bottom: 1.5rem;
-}
-.form-div-filho {
-  display: flex;
-  flex-flow: column;
-}
-.div-2 p {
-  border: solid 2px black;
-  color: black;
-}
+
 .div-card {
   flex: 1;
   max-width: 15rem;
