@@ -5,9 +5,9 @@ import foto from "../../assets/produc-image-3.png";
 import { Link } from "react-router-dom";
 export const ConsumoJson = () => {
   return (
-    <>
-     {produtos.produtos.map((elemento) => (
-        <div className="div-card">
+    <section className="componente-json">
+    {produtos.produtos.map((elemento) => (
+      <div className="div-card">
           <div className="div-imagem">
             <Link to={`/Detalhes/${elemento.id}`} className="link-imagem">
               <img src={ `src/assets/${elemento.img}`} alt={`um sapato do tipo ${elemento.name}`} />
@@ -22,7 +22,8 @@ export const ConsumoJson = () => {
             </p>
           </div>
         </div>
+        
       ))}
-    </>
+      </section>
   );
 };
