@@ -32,9 +32,8 @@ export const Products = () => {
         </div>
         <section>
           <AsideSection/>
-          <div className="componente-json">
             <ConsumoJson />
-          </div>
+
         </section>
       </main>
       <Footer />
