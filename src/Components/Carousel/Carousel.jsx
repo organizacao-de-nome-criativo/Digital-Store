@@ -6,7 +6,6 @@ export const Carousel = ({children}) => {
     //! NÃO FUI EU QUEM FIZ, FOI O CHATGPT (não to nem zuando)
   const [currentSlide, setCurrentSlide] = useState(0);
 
-
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
