@@ -72,11 +72,11 @@ Abaixo está a estrutura geral do projeto:
 
 ## Práticas Recomendadas
 
-  **Não use bootstrap**
-  **100% na mão**
-  **Organize cada componente ou page em pastas**
-  **Não use bootstrap**
-  
+ - **Não use bootstrap**
+ - **100% na mão**
+ - **Organize cada componente ou page em pastas**
+ - **Não use bootstrap**
+
 
 
 
