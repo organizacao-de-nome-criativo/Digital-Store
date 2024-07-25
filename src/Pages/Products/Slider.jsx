@@ -1,14 +1,14 @@
 
 import "./Slider.css"
-export const Slider = ({imagem,classe}) => {
-    console.log(imagem)
+export const Slider = ({imagem,classe, }) => {
+   
     return(
         <div className="imagens">
             {imagem.map((imagem,index)=> (
                
-              <div className={classe[index]}>
+              <div className={`imagem-card ` + classe[index]} >
                   <img src={`/${imagem}`} alt="" />
-
+                
               </div>
             )
 

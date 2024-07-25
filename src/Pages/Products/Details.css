@@ -1,8 +1,31 @@
 .carrosel{
 border: solid 2px red;
 width: 43.796rem;
-height: 35.688rem;
+height: 28.388rem;
 overflow: hidden;
+position: relative;
+& .button{
+    position: absolute ;
+    top: 50%;
+    cursor: pointer;
+  
 
 
 }
+
+& .button-left {
+    left: 0;
+    transform:  translate(10px, 50%);
+ 
+
+}
+& .button-right{
+    right: 0;
+
+   transform:  translate(-10px, 50%);
+}
+
+
+
+}
+
