@@ -38,9 +38,8 @@ export const Details = React.memo(() => {
 
   return (
     <>
-      <Header />
+      <Header/>
       <main>
-        <p>caminho da url.</p>
         <section className="section-bloco-principal">
           <div className="contanier-section-detalhes-1">
             <div className="carrosel">
