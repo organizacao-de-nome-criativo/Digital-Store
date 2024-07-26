@@ -9,12 +9,12 @@ export const Carousel = ({children}) => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     nextSlide();
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="carousel">
