@@ -22,7 +22,7 @@
       "categoria": "tênis",
       "cuso": "30",
       "valorAntigo": "400",
-      "img": "produc-image.png"
+      "img": "tenis.png"
     },
     {
       "id": "4",
@@ -38,7 +38,6 @@
       "categoria": "tênis",
       "cuso": "30",
       "valorAntigo": "400",
-      "img":  "produc-image.png"
     },
     {
       "id": "6",
