@@ -46,7 +46,6 @@ section {
   justify-content: space-between;
   width: 100%;
 }
-
 .div-card {
   flex: 1;
   max-width: 15rem;
@@ -56,7 +55,6 @@ section {
   flex-direction: column;
   justify-content: space-around;
 }
-
 .div-imagem img {
   width: 14rem;
 }
