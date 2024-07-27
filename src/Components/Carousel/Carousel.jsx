@@ -1,19 +1,10 @@
 import React, { useState, useEffect, children } from "react";
 import "./carousel.css";
 import { OffersSection } from "../OffersSection/OffersSection";
-
-export const Carousel = ({ children }) => {
-  //! NÃO FUI EU QUEM FIZ, FOI O CHATGPT (não to nem zuando)
+import slides from '../../json/slides.json'
+export const Carousel = ({children}) => {
+    //! NÃO FUI EU QUEM FIZ, FOI O CHATGPT (não to nem zuando)
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    "src/assets/slide-1-tenis-version1.png",
-    "src/assets/produc-image.png",
-    "src/assets/produc-image-2.png",
-    "src/assets/produc-image-3.png",
-    "src/assets/produc-image-4.png",
-    "src/assets/produc-image-5.png",
-  ];
-
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };

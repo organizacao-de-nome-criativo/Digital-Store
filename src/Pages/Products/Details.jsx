@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import "./Details.css";
 import shoes from "../../../public/shoes.json";
 import { Slider } from "./Slider";
-import estrela from "/public/estrela.svg";
+import estrela from "/estrela.svg";
 import React from "react";
 import { Slider2 } from "./Slider2";
 import { Link } from "react-router-dom";
@@ -117,7 +117,6 @@ export const Details = React.memo(() => {
           </div>
           <div className="sapatos">
             <Slider2 array={shoes} />
-            <Tamanhos />
           </div>
         </section>
       </main>
