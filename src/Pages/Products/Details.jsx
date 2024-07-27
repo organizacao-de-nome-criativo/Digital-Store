@@ -10,6 +10,7 @@ import estrela from "/public/estrela.svg";
 import React from "react";
 import { Slider2 } from "./Slider2";
 import { Link } from "react-router-dom";
+import { Tamanhos } from "./Tamanhos";
 
 export const Details = React.memo(() => {
   const { id } = useParams();
@@ -81,11 +82,12 @@ export const Details = React.memo(() => {
                   <div className="div-tamanhos-1">
                     <p> tamanho</p>
                     <div className="div-tamanhos">
-                      <div>39</div>
+                      {/* <div>39</div>
                       <div>40</div>
                       <div>41</div>
                       <div>42</div>
-                      <div>43 </div>
+                      <div>43 </div> */}
+                      <Tamanhos classe={"estado"} />
                     </div>
                   </div>
                   <div className="div-tamanhos-1">
@@ -115,6 +117,7 @@ export const Details = React.memo(() => {
           </div>
           <div className="sapatos">
             <Slider2 array={shoes} />
+            <Tamanhos />
           </div>
         </section>
       </main>
