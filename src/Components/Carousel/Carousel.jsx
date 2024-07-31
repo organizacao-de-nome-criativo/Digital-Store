@@ -3,13 +3,11 @@ import "./carousel.css";
 import { OffersSection } from "../OffersSection/OffersSection";
 import slides from '../../json/slides.json'
 export const Carousel = ({children}) => {
-    //! NÃO FUI EU QUEM FIZ, FOI O CHATGPT (não to nem zuando)
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
-
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
