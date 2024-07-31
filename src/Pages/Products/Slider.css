@@ -1,0 +1,51 @@
+.imagens {
+  display: flex;
+  width: max-content;
+  height: 31.5rem;
+  position: relative;
+
+  & div {
+    min-width: 700px;
+  }
+
+  & .color-white {
+    display: flex;
+    align-items: center;
+    background-color: hsl(238, 100%, 94%);
+  }
+
+  overflow: hidden;
+
+  & .green {
+    align-items: center;
+  }
+  & .color-blue {
+    background-color: #ffc0bc;
+
+    align-items: center;
+  }
+  & .color-red {
+    background-color: #dec699;
+  }
+}
+
+.imagem-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 31.5rem;
+
+  & .esquerda {
+    transform: translateX(0%);
+    transition: all 1s;
+  }
+}
+.slide1.active {
+}
+
+& .direita {
+  opacity: 1;
+  position: relative;
+  transition: opacity 1s ease-in-out;
+  transition: all 1s;
+}

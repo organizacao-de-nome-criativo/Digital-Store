@@ -4,7 +4,6 @@ import { OffersSection } from "../OffersSection/OffersSection";
 import slides from '../../json/slides.json'
 export const Carousel = ({children}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
@@ -17,15 +16,26 @@ export const Carousel = ({children}) => {
 
   return (
     <section className="carousel">
-       <OffersSection/>
+      <OffersSection />
       <div className="slider">
         {slides.map((slide, index) => (
-          <div key={index} className={`slide ${index === currentSlide ? "active" : ""}`}>
-            <img src={slide} alt={`Slide ${index + 1}`} className="slider-image"/>
+          <div
+            key={index}
+            className={`slide ${index === currentSlide ? "active" : ""}`}
+          >
+            <img
+              src={slide}
+              alt={`Slide ${index + 1}`}
+              className="slider-image"
+            />
           </div>
         ))}
       </div>
-      <img src="src/assets/Ornament 11.png" alt="" className="pointer-background"></img>
+      <img
+        src="src/assets/Ornament 11.png"
+        alt=""
+        className="pointer-background"
+      ></img>
       <div className="indicators">
         {slides.map((_, index) => (
           <label

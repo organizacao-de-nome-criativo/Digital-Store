@@ -1,7 +1,7 @@
 import produtos from "../../json/produtos.json"
 import "./Products.css";
 
-import foto from "../../assets/produc-image-3.png";
+
 import { Link } from "react-router-dom";
 export const ConsumoJson = () => {
   return (
@@ -10,7 +10,7 @@ export const ConsumoJson = () => {
       <div className="div-card">
           <div className="div-imagem">
             <Link to={`/Detalhes/${elemento.id}`} className="link-imagem">
-              <img src={ `src/assets/${elemento.img}`} alt={`um sapato do tipo ${elemento.name}`} />
+              <img src={ `/${elemento.img}`} alt={`um sapato do tipo ${elemento.name}`} />
             </Link>
           </div>
           <div className="paragraph">

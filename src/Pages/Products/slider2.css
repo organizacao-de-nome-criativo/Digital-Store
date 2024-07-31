@@ -1,0 +1,21 @@
+.sapato {
+  display: flex;
+  gap: 2rem;
+  overflow: auto;
+}
+.div-imagem-slider-2 {
+  transform: scale(1);
+  width: 18.25rem;
+  background-color: white;
+  transition: all ease-in-out 0.3s;
+  box-shadow: inset 0px 0px 1px 0px;
+  & img {
+    height: 100%;
+    width: auto;
+  }
+}
+.div-imagem-slider-2:hover {
+  transform: scale(1.2);
+  transition: all ease-in-out 0.3s;
+}
+
