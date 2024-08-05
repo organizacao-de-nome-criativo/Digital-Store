@@ -1,0 +1,21 @@
+@import url('../../index.css');
+
+.login-header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  background-color: white;
+}
+.login-header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 80%;
+}
+.login-header-logo img {
+  width: 80%;
+  min-width: 10rem;
+}
