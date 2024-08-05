@@ -5,7 +5,7 @@ import { Header } from "../../Components/Header/Header";
 import { useCallback, useEffect, useState } from "react";
 import "./Details.css";
 import shoes from "../../../public/shoes.json";
-import { Slider } from "./Slider";
+import { Div, Slider } from "./Slider";
 import estrela from "/public/estrela.svg";
 import React from "react";
 import { Slider2 } from "./Slider2";
@@ -38,7 +38,7 @@ export const Details = React.memo(() => {
 
   return (
     <>
-      <Header/>
+      <Header />
       <main>
         <section className="section-bloco-principal">
           <div className="contanier-section-detalhes-1">
@@ -80,11 +80,12 @@ export const Details = React.memo(() => {
                   <div className="div-tamanhos-1">
                     <p> tamanho</p>
                     <div className="div-tamanhos">
-                      <div>39</div>
+                      {/* <div>39</div>
                       <div>40</div>
                       <div>41</div>
                       <div>42</div>
-                      <div>43 </div>
+                      <div>43 </div> */}
+                      <Div />
                     </div>
                   </div>
                   <div className="div-tamanhos-1">

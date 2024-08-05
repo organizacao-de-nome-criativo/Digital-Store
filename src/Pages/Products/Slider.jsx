@@ -57,3 +57,23 @@ export const Slider = React.memo(({ imagem, classe }) => {
     </>
   );
 });
+
+export const Div = () => {
+  const numero1 = [39, 40, 41, 42, 43];
+  const [currentNumberDivAcitve, SetcurrentNumberDivActive] = useState();
+  return (
+    <>
+      {numero1.map((numero, key) => (
+        <div
+          key={key}
+          className={currentNumberDivAcitve === key ? "active" : ""}
+          onClick={() => {
+            SetcurrentNumberDivActive(key);
+          }}
+        >
+          {numero}
+        </div>
+      ))}
+    </>
+  );
+};
