@@ -15,6 +15,7 @@ export const Header = ({style}) => {
           <div className="user-register">
             <a href="">Cadastre-se</a>
             <div className="enter-button">
+              
               <Button link={'#'} nome={'Entrar'}/> 
             </div>
           </div>
