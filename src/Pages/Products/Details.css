@@ -92,6 +92,7 @@ main {
 
       width: max-content;
       & div {
+        cursor: pointer;
         width: 3rem;
         height: 3rem;
         display: flex;
@@ -101,10 +102,14 @@ main {
         background-color: white;
         box-shadow: inset 0px 0px 1px 0px;
       }
-      & div:nth-child(3) {
-        background-color: rgba(201, 32, 113, 1);
+      & .active {
+        background-color: rgba(201, 32, 112, 1);
         color: white;
       }
+      /* & div:nth-child(3) {
+        background-color: rgba(201, 32, 113, 1);
+        color: white;
+      } */
     }
   }
 }

@@ -14,7 +14,7 @@ export const FooterUl = ({ lista, titulo, classe, address, contato, id}) => {
       <h2>{titulo}</h2>
       <ul>
         {lista.map((nome) => (
-          <li><a href="">{nome}</a></li>
+          <li > <a href="" >{nome}</a></li>
         ))}
       </ul>
     </div>
