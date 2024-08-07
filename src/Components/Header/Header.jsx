@@ -14,7 +14,7 @@ export const Header = ({ style }) => {
           <img src="src/assets/search-icon.png" alt=""></img>
         </div>
         <div className="user-register">
-          <a href="">Cadastre-se</a>
+          <Link to="/Register">Cadastre-se </Link>
 
           <div className="enter-button">
             <Link to="/Login">

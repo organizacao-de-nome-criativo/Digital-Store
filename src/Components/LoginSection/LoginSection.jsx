@@ -11,7 +11,7 @@ export const LoginSection = () => {
           <div className="text-content">
             <span className="title"> Acesse sua conta</span>
             <span className="subtitle">
-              Novo cliente? Então registre-se <Link> aqui.</Link>{" "}
+              Novo cliente? Então registre-se <Link to={'/Register'}> aqui.</Link>
             </span>
           </div>
           <div className="input-area">

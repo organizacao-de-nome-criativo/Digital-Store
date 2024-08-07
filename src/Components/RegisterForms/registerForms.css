@@ -1,0 +1,170 @@
+@import url("../../../src/index.css");
+
+.register-form-section {
+  background-color: #f9f8fe;
+  width: 100%;
+  height: 75rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & .title {
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 60%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.register-form {
+  background-color: #f9f8fe;
+  width: 60%;
+  height: 70rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  & label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 24px;
+    color: var(--text-color);
+  }
+}
+.form-user-area { 
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+
+  & .subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    color: var(--text-color);
+  }
+  & .subtitle::after {
+    content: " ";
+    width: 100%;
+    border: .5px solid #CCCCCC;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+  }
+  & .register-input-user {
+    width: 100%;
+    height: 4.2rem;
+    margin-top: 10px;
+  }
+}
+.form-address-area { 
+  width: 100%;
+  height: 31rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  
+  & .subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    color: var(--text-color);
+  }
+  & .subtitle::after {
+    content: " ";
+    width: 100%;
+    border: .5px solid #CCCCCC;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+  }
+  & .register-input-address {
+    width: 100%;
+    height: 4.2rem;
+    margin-top: 10px;
+  }
+}
+.register-form-submit-area {
+  width: 100%;
+  background-color: #f9f8fe;
+  height: 15%;
+  align-self: flex-end;
+}
+
+.checkbox-area {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2rem;
+    gap: 10px;
+
+  & .subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: 100%;
+    color: var(--text-color);
+    width: 95%;
+    height: 100%;
+  }
+}
+
+.custom-checkbox { 
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  & input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  & .checkmark { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  & .checkmark::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    border: 1pt solid var( --light-gray-color);
+  }
+  & input:checked + .checkmark::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    content: " ✔ ";
+    background-color: var( --theme-color);
+  }
+}
+.button-position {
+  margin-top: 20px;
+}
