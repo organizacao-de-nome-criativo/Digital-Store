@@ -10,5 +10,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "json": "^11.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  }
 }
