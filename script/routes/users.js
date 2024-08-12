@@ -1,9 +1,12 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-
+const controllers = require("../controllers/users");
+console.log("ola");
+const bycript = require("bcrypt");
+const { json } = require("sequelize");
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get("/", controllers.Getusers);
+router.post("/register", controllers.register);
+router.get("/register/profile");
 
 module.exports = router;
