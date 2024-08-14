@@ -8,6 +8,7 @@ import PageNotFound from "./Pages/PageNotFound/PageNotFoun";
 import { Login } from "./Pages/Login/Login";
 import "./form.css";
 import { useRef, useState } from "react";
+import { Cadastro } from "./Components/formularios/Cadastro";
 
 function App() {
   const [name, Setname] = useState();
@@ -27,7 +28,8 @@ function App() {
           <Route path="Categories" element={<Categories />} />
           <Route path="Requests" element={<Requests />} />
           <Route path="/Detalhes/:id" element={<Details />} />
-          <Route path="Login" element={<Login/>} />
+          <Route path="Login" element={<Login />} />
+          <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
