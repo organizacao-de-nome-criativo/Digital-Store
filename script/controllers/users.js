@@ -7,7 +7,7 @@ const Getusers = async (req, res) => {
 };
 const register = async (req, res) => {
   try {
-    const { name, email, cpf, phone, address, password } = req.body;
+    const { name, email, cpf, phone, address, password, cep } = req.body;
     console.log(name);
     const cadatro = users.create({
       name,
@@ -16,14 +16,24 @@ const register = async (req, res) => {
       phone,
       address,
       password,
+      cep,
     });
     res.json({ message: "cadastro realizado com sucesso" });
   } catch (err) {
-    throw new Error("não foi possivel acessar");
+    res.status(500).send("não foi possivel cadastrar o usuário " + err.message);
   }
+};
+const login = async (req, res) => {
+  try {
+  } catch (error) {}
+};
+const profile = async (req, res) => {
+  try {
+  } catch (err) {}
 };
 
 module.exports = {
   Getusers,
   register,
+  profile,
 };
