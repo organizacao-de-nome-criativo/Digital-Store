@@ -1,9 +1,9 @@
 const { where } = require("sequelize");
-const { users } = require("../models");
+const { User } = require("../models");
 const bycript = require("bcrypt");
 const Getusers = async (req, res) => {
   console.log(1234);
-  const todosusuarios = await users.findAll();
+  const todosusuarios = await User.findAll();
 
   res.json(todosusuarios);
 };
@@ -13,7 +13,7 @@ const register = async (req, res) => {
     console.log(name);
     const camada_cripotografia = 10;
     const password_has = bycript.hash(password, camada_cripotografia);
-    const cadatro = users.create({
+    const cadatro = User.create({
       name,
       email,
       cpf,
@@ -31,10 +31,17 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = users.findOne({ where: { email } });
+    console.log(email);
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
+      throw new Error("não foi possivel encontrar o usuário");
+    }
 
     console.log(user);
-  } catch (error) {}
+    res.send("usuário cadastrado");
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
 };
 const profile = async (req, res) => {
   try {
@@ -45,4 +52,5 @@ module.exports = {
   Getusers,
   register,
   profile,
+  login,
 };

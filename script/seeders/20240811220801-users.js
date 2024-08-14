@@ -6,21 +6,23 @@ module.exports = {
     await queryInterface.bulkInsert("Users", [
       {
         name: "levi",
-        cpf: "1223419129934",
+        cpf: "1010",
         email: "levi@gmail",
-        address: "fortaleza",
+
         phone: "203401234",
         createdAt: new Date(),
         updatedAt: new Date(),
+        password: "234567",
       },
       {
         name: "lucas",
-        cpf: "1223419129934",
+        cpf: "12234191299346",
         email: "lucas@gmail",
-        address: "fortaleza",
-        phone: "203401234",
+
+        phone: "2034012342",
         createdAt: new Date(),
         updatedAt: new Date(),
+        password: "12345678",
       },
     ]);
   },
