@@ -7,7 +7,8 @@ const { json } = require("sequelize");
 
 /* GET users listing. */
 router.get('/products', controllers.getAllProducts)
-router.get('/products/:id', controllers.getOne)
+router.get('/products/:id', controllers.getOneProduct)
+router.post('/products', controllers.createProducts)
 
 
 module.exports = router;
