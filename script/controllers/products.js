@@ -12,6 +12,9 @@ const getOneProduct = async (request, response) => {
     response.json(findProduct)
 }
 
+// const createProducts = async (request, response) => {
+
+// }
 module.exports = {
     getAllProducts,
     getOneProduct,
