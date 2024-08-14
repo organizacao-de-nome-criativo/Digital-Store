@@ -1,45 +1,44 @@
-const { Products } = require('../models')
-
+const { Products } = require("../models");
 
 const getAllProducts = async (request, response) => {
-    const allProducts = await Products.findAll()
-    response,json(allProducts)
-}
+  const allProducts = await Products.findAll();
+  response.json(allProducts);
+};
 
 const getOneProduct = async (request, response) => {
-    const oneProduct = parseInt(request.params.id)
-    const findProduct = await Products.findByPk(oneProduct)
-    response.json(findProduct)
-}
+  const oneProduct = parseInt(request.params.id);
+  const findProduct = await Products.findByPk(oneProduct);
+  response.json(findProduct);
+};
 
 const createProducts = async (request, response) => {
-    // console.log('ok')
-    const {
-        name, 
-        imageUrl, 
-        price, 
-        description, 
-        category, 
-        color, 
-        size, 
-        discount  
-    } = await request.body
+  // console.log('ok')
+  const {
+    name,
+    imageUrl,
+    price,
+    description,
+    category,
+    color,
+    size,
+    discount,
+  } = await request.body;
 
-    const createOne = await products.create({
-        name, 
-        imageUrl, 
-        price, 
-        description, 
-        category, 
-        color, 
-        size, 
-        discount
-    })
+  const createOne = await Products.create({
+    name,
+    imageUrl,
+    price,
+    description,
+    category,
+    color,
+    size,
+    discount,
+  });
 
-    response.send(createOne)
-}   
+  response.send(createOne);
+};
 module.exports = {
-    getAllProducts,
-    getOneProduct,
-    createProducts,
-}
+  getAllProducts,
+  getOneProduct,
+  createProducts,
+};

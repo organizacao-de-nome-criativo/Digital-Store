@@ -3,12 +3,9 @@ var router = express.Router();
 const controllers = require("../controllers/products");
 const { json } = require("sequelize");
 
-
-
 /* GET users listing. */
-router.get('/products', controllers.getAllProducts)
-router.get('/products/:id', controllers.getOneProduct)
-router.post('/products', controllers.createProducts)
-
+router.get("/", controllers.getAllProducts);
+router.get("/products/:id", controllers.getOneProduct);
+router.post("/", controllers.createProducts);
 
 module.exports = router;

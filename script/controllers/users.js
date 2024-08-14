@@ -31,7 +31,8 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const {} = users.findOne({ where: { email } });
+    const user = users.findOne({ where: { email } });
+
     console.log(user);
   } catch (error) {}
 };
