@@ -21,7 +21,12 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <form action="">
+        <label htmlFor="">
+          <input type="text" name="email" />
+        </label>
+      </form>
+      {/* <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path="Products" element={<Products />} />
@@ -32,7 +37,7 @@ function App() {
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   );
 }

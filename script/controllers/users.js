@@ -63,9 +63,26 @@ const login = async (req, res) => {
     res.status(404).json(error.message);
   }
 };
-const auth = () => {};
+const auth = (req, res, next) => {
+  const { Authorization } = req.headers;
+  const token = Authorization && Authorization.split("")[1];
+  if (token == null) {
+    res.status(404).send("token não encontrado");
+  }
+  jwt.verify(token, process.env.SECRET_KEY, (error, payload) => {
+    console.log(error);
+    if (error) {
+      res.send("token invalido");
+    }
+    console.log(payload);
+    next();
+  });
+};
 const profile = async (req, res) => {
   try {
+    res.send(
+      "bem vindo usuário autenticado, sinta-se avontade na sua nova casa"
+    );
   } catch (err) {}
 };
 
