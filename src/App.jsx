@@ -6,7 +6,7 @@ import { Requests } from "../src/Pages/Requests/Requests";
 import { Details } from "./Pages/Products/Details";
 import PageNotFound from "./Pages/PageNotFound/PageNotFoun";
 import { Login } from "./Pages/Login/Login";
-import "./form.css";
+// import "./form.css";
 import { useRef, useState } from "react";
 import { Cadastro } from "./Components/formularios/Cadastro";
 
