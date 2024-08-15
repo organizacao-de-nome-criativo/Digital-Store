@@ -9,16 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      adressID: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Addresses',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      },
+      
       name: {
         type: Sequelize.STRING
       },
