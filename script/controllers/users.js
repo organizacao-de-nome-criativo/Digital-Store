@@ -36,7 +36,9 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(email);
+
+    console.log(email, password);
+
     const usuario = await User.findOne({ where: { email } });
     if (!usuario) {
       throw new Error("não foi possivel encontrar o usuário");
@@ -50,16 +52,18 @@ const login = async (req, res) => {
     if (!passwordMatch) {
       throw new Error("senhas não compatíveis");
     }
+    console.log(dataValues);
 
     const token = jwt.sign({ dataValues }, process.env.SECRET_KEY, {
       expiresIn: "1h",
     });
-    console.log(token);
-    res.status("200").json("token gerado com sucesso");
+
+    res.status("200").json({ token });
   } catch (error) {
-    res.status(404).send(error.message);
+    res.status(404).json(error.message);
   }
 };
+const auth = () => {};
 const profile = async (req, res) => {
   try {
   } catch (err) {}
@@ -70,4 +74,5 @@ module.exports = {
   register,
   profile,
   login,
+  auth,
 };

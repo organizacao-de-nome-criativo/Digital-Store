@@ -10,9 +10,7 @@ router.post("/register", controllers.register);
 router.post("/login", controllers.login);
 router.get(
   "/register/profile",
-  (req, res, next) => {
-    next();
-  },
+
   controllers.profile
 );
 

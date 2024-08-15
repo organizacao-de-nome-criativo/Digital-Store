@@ -12,7 +12,6 @@ const getOneProduct = async (request, response) => {
 };
 
 const createProducts = async (request, response) => {
-  // console.log('ok')
   const {
     name,
     imageUrl,

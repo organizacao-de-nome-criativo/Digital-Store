@@ -14,7 +14,7 @@ export const LoginSection = () => {
               Novo cliente? Então registre-se <Link to="/cadastro"> aqui.</Link>{" "}
             </span>
           </div>
-          <div className="input-area">
+          <form className="input-area">
             <div className="email-input">
               <InputText
                 type={"email"}
@@ -31,7 +31,7 @@ export const LoginSection = () => {
                 label={"Senha *"}
               />
             </div>
-          </div>
+          </form>
           <span className="subtitle">
             <Link>Esqueci minha senha</Link>
           </span>
