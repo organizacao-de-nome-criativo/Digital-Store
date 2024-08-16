@@ -8,6 +8,70 @@ export const Cadastro = () => {
       <LoginHeader />
 
       <main className="form-container">
+        <h1>Criar Conta</h1>
+        <form action="">
+          <h2 className="form-title">Informações pessoais</h2>
+          <div className="form-group">
+          <label htmlFor="NomeCompleto">Nome Completo *</label>
+          <input 
+            className="NomeCompleto"
+            type="text"
+            name="NomeCompleto"
+            id="NomeCompleto"
+            placeholder="Insira seu nome"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="cpf">CPF *</label>
+          <input 
+            className="cpf"
+            type="text"
+            name="cpf"
+            id="cpf"
+            placeholder="Insira seu cpf"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="e-mail">E-mail *</label>
+          <input 
+            className="e-mail"
+            type="text"
+            name="e-mail"
+            id="e-mail"
+            placeholder="Insira seu e-mail"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="celular">Celular *</label>
+          <input 
+            className="celular"
+            type="text"
+            name="celular"
+            id="celular"
+            placeholder="Insira seu celular-"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="complemento">Complemento *</label>
+          <input 
+            className="complemento"
+            type="text"
+            name="complemento"
+            id="complemento"
+            placeholder="Insira complemento"
+            required
+          />
+        </div>
+
+
         <h3 className="form-title">Informações de entrega</h3>
         
         <div className="form-group">
@@ -69,6 +133,8 @@ export const Cadastro = () => {
             required
           />
         </div>
+        </form>
+        
       </main>
 
       <Footer />
