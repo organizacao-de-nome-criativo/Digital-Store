@@ -6,7 +6,11 @@ import { Requests } from "../src/Pages/Requests/Requests";
 import { Details } from "./Pages/Products/Details";
 import PageNotFound from "./Pages/PageNotFound/PageNotFoun";
 import { Login } from "./Pages/Login/Login";
+<<<<<<< HEAD
+// import "./form.css";
+=======
 
+>>>>>>> a09d3a7969e867743ceb5ef085e09b3aff02c0bb
 import { useRef, useState } from "react";
 import { Cadastro } from "./Components/formularios/Cadastro";
 
