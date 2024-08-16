@@ -15,17 +15,20 @@ export const API = async (path, metodh = "get", body = undefined) => {
 async function casa() {
   try {
     const resopnse = await API("users/register", "POST", {
-      name: "fransico da silva costa",
-      email: "fransiquinho@gmail",
-      CPF: "52000202002",
-      phone: "123450",
-      password: "40405000",
+      number: "1",
+      complement: "casa",
+      bairro: "lagoa redonda",
+      city: "fortaleza",
+      street: "rua ferreira",
+      name: "gleici",
+      email: "gleici@gmail",
+      CPF: "103040",
+      phone: "1520120",
+      password: "41004050",
     });
 
     const data = await resopnse.json();
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
 }
-casa();

@@ -3,6 +3,7 @@ require("dotenv").config();
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { json } = require("sequelize");
+const ControllersAddres = require("../controllers/address");
 
 const Getusers = async (req, res) => {
   const todosusuarios = await User.findAll();
@@ -11,10 +12,12 @@ const Getusers = async (req, res) => {
 };
 const register = async (req, res) => {
   try {
+    await ControllersAddres(req, res);
     const { name, email, CPF, phone, password } = req.body;
 
     console.log(name);
     const camada_cripotografia = 10;
+    console.log(password);
     const password_has = await bycript.hash(password, camada_cripotografia);
     console.log(password_has);
 
