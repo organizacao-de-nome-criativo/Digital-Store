@@ -1,29 +1,27 @@
 import { useState } from "react";
 import { API } from "../ui/api.fetch";
 
-export const CreateUser = async (evento) => {
-  const { error, Seterror } = useState(null);
-  const { loadig, Setloading } = useState(false);
-  const { cadastroRealizado, setCadastroRealizado } = useState();
+export const CreateUser = () => {
+  const [error, Seterror] = useState();
+  const [loadig, Setloading] = useState(null);
+  const fetcha = async (e) => {
+    Setloading(true);
+    e.preventDefault();
+    const form = e.target;
+    const body = Object.fromEntries(new FormData(form).entries());
 
-  Seterror(null);
-  Setloading(true);
+    try {
+      const response = await API("users/register", "POST", body);
 
-  try {
-    const response = await API(
-      "users/register",
-      "POST ",
-      "um objeto que compoe o corpo dessa requisiçaõ"
-    );
-    const data = await response.json();
-    setCadastroRealizado(data.message);
-  } catch (error) {
-    Seterror(error);
-  }
-  Setloading(false);
-  return {
-    error,
-    loadig,
-    cadastroRealizado,
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error);
+      }
+    } catch (error) {
+      Seterror(error);
+    }
+    Setloading(false);
   };
+
+  return { error, loadig, fetcha };
 };
