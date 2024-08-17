@@ -20,7 +20,7 @@ export const Cadastro = () => {
   const [Mudar, Setmudar] = useState("Mostra");
   const { error, loadig, fetcha } = CreateUser();
   const { regraDeNegocio, name, cpf, senha, email } = validation();
-  const { errorSenha, errorName, errorCpf } = regraDeNegocio;
+  const { errorSenha, errorName, errorCpf, errorEmail } = regraDeNegocio;
   if (errorSenha) {
     console.log("ola mund");
   }
@@ -51,6 +51,9 @@ export const Cadastro = () => {
                   required
                 />
               </div>
+              <p className={errorSenha ? "ErrorActive" : ""}>
+                {errorSenha ? errorSenha : ""}
+              </p>
               <div className="form-group variante-senha">
                 <label htmlFor="NomeCompleto">crie sua senha</label>
                 <p
@@ -67,6 +70,7 @@ export const Cadastro = () => {
                   className="NomeCompleto"
                   type={Mudar === "mostar" ? "password" : "text"}
                   name="password"
+                  onChange={senha}
                   id="my password"
                   placeholder="Insira seu nome"
                   required
@@ -74,7 +78,9 @@ export const Cadastro = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="cpf">CPF *</label>
-                {errorCpf ? errorCpf : ""}
+                <p className={errorCpf ? "ErrorActive" : "valido"}>
+                  {errorCpf ? errorCpf : ""}
+                </p>
                 <input
                   onBlur={cpf}
                   className="cpf"
@@ -86,8 +92,12 @@ export const Cadastro = () => {
                 />
               </div>
               <div className="form-group">
+                <p className={errorEmail ? "ErrorActive" : ""}>
+                  {errorEmail ? errorEmail : ""}
+                </p>
                 <label htmlFor="e-mail">E-mail *</label>
                 <input
+                  onChange={email}
                   className="e-mail"
                   type="text"
                   name="email"

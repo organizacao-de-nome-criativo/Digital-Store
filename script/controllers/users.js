@@ -32,7 +32,10 @@ const register = async (req, res) => {
     console.log(cadatro);
     res.json({ message: "cadastro realizado com sucesso" });
   } catch (err) {
-    res.status(500).json("não foi possivel cadastrar o usuário " + err.message);
+    // res.json("não foi possivel carregar  o usuer");
+    res
+      .status(500)
+      .json({ error: "não foi possivel carregar o usuário " + err.message });
   }
 };
 const login = async (req, res) => {

@@ -1,34 +1,27 @@
 import { useState } from "react";
 import { API } from "../ui/api.fetch";
 
-export const CreateUser = async (evento) => {
-  evento.preventDefault();
-  const form = evento.target;
-  const body = Object.fromEntries(new FormData(form).entries());
+export const CreateUser = () => {
+  const [error, Seterror] = useState();
+  const [loadig, Setloading] = useState(null);
+  const fetcha = async (e) => {
+    Setloading(true);
+    e.preventDefault();
+    const form = e.target;
+    const body = Object.fromEntries(new FormData(form).entries());
 
-  // const [error, Seterror] = useState(null);
-  // const [loadig, Setloading] = useState(false);
-  // const [cadastroRealizado, setCadastroRealizado] = useState();
+    try {
+      const response = await API("users/register", "POST", body);
 
-  // Seterror(null);
-
-  // Setloading(true);
-
-  try {
-    console.log(12345);
-    const response = await API("users/register", "POST", body);
-    console.log(123456);
-    const data = await response.json();
-    console.log(data);
-    // setCadastroRealizado(data.message);
-  } catch (error) {
-    // Seterror(error);
-  }
-  // Setloading(false);
-  return {
-    error: "ta chetgando aqui",
-    // error,
-    // loadig,
-    // cadastroRealizado,
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error);
+      }
+    } catch (error) {
+      Seterror(error);
+    }
+    Setloading(false);
   };
+
+  return { error, loadig, fetcha };
 };
