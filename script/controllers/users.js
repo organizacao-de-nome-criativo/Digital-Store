@@ -6,8 +6,8 @@ const { json } = require("sequelize");
 
 const Getusers = async (req, res) => {
   const todosusuarios = await User.findAll();
-
-  res.json("ola lenda como vai");
+// "ola lenda como vai"
+  res.json(todosusuarios);
 };
 const register = async (req, res) => {
   try {
