@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       Products.hasOne(models.OrderProductItem);
       Products.belongsTo(models.Lojas, {
         foreignKey: "lojaId",
-        onDelete: "CASCADE",
       });
     }
   }

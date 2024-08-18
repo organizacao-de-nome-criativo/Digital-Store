@@ -7,12 +7,11 @@ const ControllersAddres = require("../controllers/address");
 
 const Getusers = async (req, res) => {
   const todosusuarios = await User.findAll();
-// "ola lenda como vai"
+  // "ola lenda como vai"
   res.json(todosusuarios);
 };
 const register = async (req, res) => {
   try {
-    await ControllersAddres(req, res);
     const { name, email, CPF, phone, password } = req.body;
 
     console.log(name);
@@ -29,7 +28,9 @@ const register = async (req, res) => {
 
       password: password_has,
     });
-    console.log(cadatro);
+    const { dataValues } = cadatro;
+    await ControllersAddres(req, res, dataValues.id);
+
     res.json({ message: "cadastro realizado com sucesso" });
   } catch (err) {
     // res.json("não foi possivel carregar  o usuer");
