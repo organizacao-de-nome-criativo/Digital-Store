@@ -1,15 +1,20 @@
-export const API = async (path, metodh = "get", body = undefined) => {
+export const API = async (path, method = "GET", body = undefined) => {
   if (body) {
     return await fetch(`http://localhost:3000/${path}`, {
       headers: {
         "Content-type": "application/json",
       },
-      method: metodh,
+      method: method,
       body: JSON.stringify(body),
     });
   }
 
-  return await fetch("http:/localhost:3000/" + path);
+  return await fetch(`http://localhost:3000/${path}/` , {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: method
+  });
 };
 
 async function casa() {
