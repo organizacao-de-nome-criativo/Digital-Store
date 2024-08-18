@@ -11,7 +11,6 @@ export const API = async (path, metodh = "get", body = undefined) => {
 
   return await fetch("http:/localhost:3000/" + path);
 };
-
 async function casa() {
   try {
     const resopnse = await API("users/register", "POST", {

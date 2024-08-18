@@ -1,16 +1,23 @@
 import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { API } from "../ui/api.fetch";
 
-export const LoginUser = async (auth) => {
-  const { error, seterror } = useState(null);
+export const LoginUser = () => {
+  const [error, seterror] = useState(null);
 
-  try {
-  } catch (error) {
-    seterror(error);
-  }
-  auth(token);
+  const FetchLogin = async (evento) => {
+    evento.preventDefault();
+
+    const body = Object.fromEntries(new FormData(evento.target).entries());
+
+    try {
+      const response = await API("users/login", "POST", body);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {}
+  };
 
   return {
     error,
+    FetchLogin,
   };
 };
