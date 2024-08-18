@@ -16,7 +16,6 @@ export const API = async (path, method = "GET", body = undefined) => {
     method: method
   });
 };
-
 async function casa() {
   try {
     const resopnse = await API("users/register", "POST", {

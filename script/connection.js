@@ -19,10 +19,12 @@ sequelize
   .authenticate()
   .then(() => {
     console.log("Connection has been established successfully.");
+
     process.exit(0); // Sair do processo após a verificação da conexão
   })
   .catch((err) => {
     console.error("Unable to connect to the database:", err);
     process.exit(1); // Sair do processo com erro
   });
+
 module.exports = sequelize;

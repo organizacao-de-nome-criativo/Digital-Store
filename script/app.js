@@ -9,6 +9,7 @@ var logger = require("morgan");
 var usersRouter = require("./routes/users");
 const productsRouter = require("./routes/product");
 const ordersRouter = require("./routes/order");
+const RotaLojas = require("./routes/lojas");
 var app = express();
 app.use(cors());
 
@@ -26,7 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/users", usersRouter);
 app.use("/product", productsRouter);
 app.use("/orders", ordersRouter);
-
+app.use("/", RotaLojas);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -9,10 +9,10 @@ const getAllProducts = async (request, response) => {
 }
 
 const getOneProduct = async (request, response) => {
-    const oneProduct = parseInt(request.params.id)
-    const findProduct = await Products.findByPk(oneProduct)
-    response.json(findProduct)
-}
+  const oneProduct = parseInt(request.params.id);
+  const findProduct = await Products.findByPk(oneProduct);
+  response.json(findProduct);
+};
 
 const createProduct = async (request, response) => {
   const {

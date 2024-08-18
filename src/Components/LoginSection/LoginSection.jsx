@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import "./loginSection.css";
-import { InputText } from "../Input/InputText";
+// import { InputText } from "../Input/InputText";
 import { Button } from "../Button/Button";
+import "./inputText.css";
+
+import { LoginUser } from "../../services/LoginUser";
 
 export const LoginSection = () => {
+  const { FetchLogin } = LoginUser();
+
   return (
-    <form method="POST" className="login-flex-section">
+    <form className="login-flex-section" onSubmit={FetchLogin}>
       <section className="login-area">
         <div className="login-area-content">
           <div className="text-content">
@@ -14,32 +19,52 @@ export const LoginSection = () => {
               Novo cliente? Então registre-se <Link to="/cadastro"> aqui.</Link>{" "}
             </span>
           </div>
-          <form className="input-area">
+          <div className="input-area">
             <div className="email-input">
-              <InputText
+              <section className="text-input-position">
+                <label>Login</label>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="insira seu email"
+                  className="text-input"
+                />
+              </section>
+              {/* <InputText
                 type={"email"}
+                name={"email"}
                 pHold={"Insira seu login ou email"}
                 id={"email"}
                 label={"Login *"}
-              />
+              /> */}
             </div>
             <div className="senha-input">
-              <InputText
+              <section className="text-input-position">
+                <label>digite sua senha</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="insira seu email"
+                  className="text-input"
+                />
+              </section>
+              {/* <InputText
+                name={"password"}
                 type={"password"}
                 pHold={"Insira sua senha"}
                 id={"password"}
                 label={"Senha *"}
-              />
+              /> */}
             </div>
-          </form>
+          </div>
           <span className="subtitle">
             <Link>Esqueci minha senha</Link>
           </span>
-          <Link to={"/"}>
-            <div className="login-button">
-              <Button nome={"Acessar Conta"} type={"submit"} />
-            </div>
-          </Link>
+
+          <div className="login-button">
+            <Button nome={"Acessar Conta"} type={"submit"} />
+          </div>
+
           <span className="subtitle login-type">
             Ou faça login com
             <div className="gmail-login-icon">
