@@ -24,7 +24,7 @@ const createProducts = async (request, response) => {
     discount,
   } = await request.body;
 
-    const createOne = await products.create({
+    const createOne = await Products.create({
         name, 
         imageUrl, 
         price, 
