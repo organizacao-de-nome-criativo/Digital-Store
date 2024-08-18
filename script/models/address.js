@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Address extends Model {
     /**
@@ -11,19 +9,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Address.hasOne(models.User)
+      Address.hasOne(models.User);
     }
   }
-  Address.init({
-    street: DataTypes.STRING,
-    number: DataTypes.STRING,
-    CEP: DataTypes.STRING,
-    bairro: DataTypes.STRING,
-    city: DataTypes.STRING,
-    complement: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Address',
-  });
+  Address.init(
+    {
+      street: DataTypes.STRING,
+      number: DataTypes.STRING,
+      CEP: DataTypes.STRING,
+      bairro: DataTypes.STRING,
+      city: DataTypes.STRING,
+      complement: DataTypes.STRING,
+      estado: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Address",
+    }
+  );
   return Address;
 };

@@ -3,7 +3,7 @@ const { Address } = require("../models");
 const CreateAddres = async (req, response) => {
   try {
     console.log(req.body);
-    const { street, number, CEP, bairro, city, complement } = req.body;
+    const { street, number, CEP, bairro, city, complement, estado } = req.body;
     console.log(complement);
 
     console.log(street);
@@ -14,6 +14,7 @@ const CreateAddres = async (req, response) => {
       bairro,
       city,
       complement,
+      estado,
     });
     console.log("inserção realizada com sucesso na tabela de endereõ");
   } catch (error) {
