@@ -7,7 +7,7 @@ const ControllersAddres = require("../controllers/address");
 
 const Getusers = async (req, res) => {
   const todosusuarios = await User.findAll();
-  // "ola lenda como vai"
+
   res.json(todosusuarios);
 };
 const register = async (req, res) => {
