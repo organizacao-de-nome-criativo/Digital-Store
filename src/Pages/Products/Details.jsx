@@ -32,15 +32,15 @@ export const Details = React.memo(() => {
   // const [current, Setcurrent] = useState(0);
   const clase = ["color-white", "green", "color-red", "color-blue"];
 
-  const ItemEscolhido = json.produtos.find((item) => item.id === id);
-  console.log(ItemEscolhido);
-  const image = [
-    ItemEscolhido.img,
-    ItemEscolhido.img,
-    ItemEscolhido.img,
-    ItemEscolhido.img,
-  ];
-  console.log(shoes);
+  // const ItemEscolhido = json.produtos.find((item) => item.id === id);
+  // console.log(ItemEscolhido);
+  // const image = [
+  //   ItemEscolhido.img,
+  //   ItemEscolhido.img,
+  //   ItemEscolhido.img,
+  //   ItemEscolhido.img,
+  // ];
+  // console.log(shoes);
 
   const renderiza = useCallback(() => {
     return (
