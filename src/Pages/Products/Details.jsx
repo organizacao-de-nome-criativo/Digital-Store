@@ -10,10 +10,26 @@ import estrela from "/public/estrela.svg";
 import React from "react";
 import { Slider2 } from "./Slider2";
 import { Link } from "react-router-dom";
+import { API } from "../../ui/api.fetch";
 
 export const Details = React.memo(() => {
   const { id } = useParams();
-  const [current, Setcurrent] = useState(0);
+  console.log(id)
+
+  const valor = id
+  const [singleProduct, setSingleProduct] = useState([])
+
+  useEffect(() =>{
+    const getProductById = async (valor) => {
+        const resp = await API(`product/${valor}`)
+        const data = await resp.json()
+        setSingleProduct(data)
+        // console.log(setSingleProduct)
+      }
+       getProductById(valor)
+  },[])
+
+  // const [current, Setcurrent] = useState(0);
   const clase = ["color-white", "green", "color-red", "color-blue"];
 
   const ItemEscolhido = json.produtos.find((item) => item.id === id);
@@ -36,6 +52,10 @@ export const Details = React.memo(() => {
     );
   });
 
+ 
+
+  console.log(singleProduct)
+
   return (
     <>
       <Header />
@@ -43,14 +63,15 @@ export const Details = React.memo(() => {
         <section className="section-bloco-principal">
           <div className="contanier-section-detalhes-1">
             <div className="carrosel">
-              <Slider imagem={image} classe={clase} />
+            {/* <Slider imagem={image}  /> */}
+              <img src={singleProduct.imageUrl} className="slider"  alt="" />
             </div>
           </div>
           <div className="second-div-section-detalhes">
             {" "}
             <div className="bloco-detalhes-h2">
               <div className="second-div-section-detalhes-1">
-                <h2>{`tenis ${ItemEscolhido.name} revolution 6 next nature masculino`}</h2>
+                <h2>{singleProduct.name}</h2>
                 <p>
                   casual <span>|</span> nike <span>|</span> ref:38416711
                 </p>
@@ -65,15 +86,11 @@ export const Details = React.memo(() => {
             </div>
             <div className="bloco-h3-detalhes">
               <h3>
-                r$ <span> {ItemEscolhido.cuso}</span> ,00
+                r$ <span> {singleProduct.price}</span> ,00
               </h3>
               <div className="paragraph-div-detalhes">
                 <p>descrição do produto</p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                </p>
+                <p>{singleProduct.description}</p>
               </div>
               <div className="tamanhos">
                 <div className=" div-geral-tamanhos">

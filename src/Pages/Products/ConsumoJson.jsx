@@ -23,7 +23,8 @@ export const ConsumoJson = () => {
   return (
     <section className="componente-json" >
     {products.map((product) => (
-      console.log(product.imageUrl),
+
+      // console.log(product.imageUrl),
       <div className="div-card"  key={product.id}>
           <div className="div-imagem">
             <Link to={`/Detalhes/${product.id}`} className="link-imagem">

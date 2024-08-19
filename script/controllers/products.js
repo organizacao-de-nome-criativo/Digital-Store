@@ -1,15 +1,15 @@
-const { where } = require('sequelize')
+
 const { Products } = require('../models')
 
 
 const getAllProducts = async (request, response) => {
     const allProducts = await Products.findAll()
-    console.log(allProducts)
     response.json(allProducts)
 }
 
 const getOneProduct = async (request, response) => {
   const oneProduct = parseInt(request.params.id);
+  console.log(oneProduct)
   const findProduct = await Products.findByPk(oneProduct);
   response.json(findProduct);
 };
@@ -24,6 +24,7 @@ const createProduct = async (request, response) => {
     color,
     size,
     discount,
+
   } = await request.body;
 
     const createOne = await Products.create({
@@ -34,9 +35,10 @@ const createProduct = async (request, response) => {
         category, 
         color, 
         size, 
-        discount
+        discount,
+        lojaId:"loja"
     })
-    response.send(createOne)
+    response.json(createOne)
 }   
 
 const deleteProduct = async (request, response) => {

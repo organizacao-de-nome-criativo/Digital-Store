@@ -31,6 +31,7 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
+          
         </Routes>
       </BrowserRouter>
     </>

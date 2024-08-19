@@ -3,6 +3,7 @@ import { useState } from "react";
 import React from "react";
 
 export const Slider = React.memo(({ imagem, classe }) => {
+  console.log(imagem.imageUrl)
   const [current, Setcurrent] = useState(0);
   function buttonLeft() {
     Setcurrent((prev) => (prev - 1 + imagem.length) % imagem.length);

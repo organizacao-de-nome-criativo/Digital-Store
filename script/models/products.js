@@ -11,10 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       // Products.hasMany(models.orderproductitem)
       Products.hasOne(models.OrderProductItem);
-      Products.belongsTo(models.Lojas, {
-        foreignKey: "lojaId",
-        onDelete: "CASCADE",
-      });
+     
     }
   }
   Products.init(
@@ -27,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       color: DataTypes.STRING,
       size: DataTypes.STRING,
       discount: DataTypes.FLOAT,
-      lojadId: DataTypes.STRING,
+      // lojadId: DataTypes.STRING,
     },
     {
       sequelize,
