@@ -65,6 +65,7 @@ main {
 .section-bloco-principal {
   display: flex;
   gap: 2.5rem;
+
   & .div-logo-estrelas {
     display: flex;
     align-items: center;
@@ -218,7 +219,7 @@ main {
     width: 100%;
   }
 }
-.slider{
+.slid3r{
     width: 100%;
     object-fit: contain;
 }

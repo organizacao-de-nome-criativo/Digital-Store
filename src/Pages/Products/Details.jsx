@@ -64,7 +64,7 @@ export const Details = React.memo(() => {
           <div className="contanier-section-detalhes-1">
             <div className="carrosel">
             {/* <Slider imagem={image}  /> */}
-              <img src={singleProduct.imageUrl} className="slider"  alt="" />
+              <img src={singleProduct.imageUrl} className="slid3r"  alt="" />
             </div>
           </div>
           <div className="second-div-section-detalhes">
