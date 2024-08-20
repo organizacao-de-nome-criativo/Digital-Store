@@ -9,6 +9,7 @@ import { Login } from "./Pages/Login/Login";
 
 import { useRef, useState } from "react";
 import { Cadastro } from "./Components/formularios/Cadastro";
+import { FormularioComprar } from "./Components/formularios/formularioComprar";
 
 function App() {
   const [name, Setname] = useState();
@@ -31,7 +32,7 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
-          
+          <Route path="comprar" element={<FormularioComprar />} />
         </Routes>
       </BrowserRouter>
     </>
