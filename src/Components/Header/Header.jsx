@@ -14,14 +14,13 @@ export const Header = ({ style }) => {
           <img src="src/assets/search-icon.png" alt=""></img>
         </div>
         <div className="user-register">
-          <a href="">Cadastre-se</a>
+          <Link to="/cadastro">Cadastre-se</Link>
 
           <div className="enter-button">
             <Link to="/Login">
-              <Button nome={'Entrar'} />
+              <Button nome={"Entrar"} />
             </Link>
           </div>
-
         </div>
         <div className="cart-ico">
           <img src="src/assets/carrinho-de-compras.png" alt="" />
@@ -30,4 +29,4 @@ export const Header = ({ style }) => {
       <Nav />
     </header>
   );
-}
+};

@@ -14,20 +14,20 @@ import { API } from "../../ui/api.fetch";
 
 export const Details = React.memo(() => {
   const { id } = useParams();
-  console.log(id)
+  console.log(id);
 
-  const valor = id
-  const [singleProduct, setSingleProduct] = useState([])
+  const valor = id;
+  const [singleProduct, setSingleProduct] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     const getProductById = async (valor) => {
-        const resp = await API(`product/${valor}`)
-        const data = await resp.json()
-        setSingleProduct(data)
-        // console.log(setSingleProduct)
-      }
-       getProductById(valor)
-  },[])
+      const resp = await API(`product/${valor}`);
+      const data = await resp.json();
+      setSingleProduct(data);
+      // console.log(setSingleProduct)
+    };
+    getProductById(valor);
+  }, []);
 
   // const [current, Setcurrent] = useState(0);
   const clase = ["color-white", "green", "color-red", "color-blue"];
@@ -52,9 +52,7 @@ export const Details = React.memo(() => {
     );
   });
 
- 
-
-  console.log(singleProduct)
+  console.log(singleProduct);
 
   return (
     <>
@@ -63,8 +61,8 @@ export const Details = React.memo(() => {
         <section className="section-bloco-principal">
           <div className="contanier-section-detalhes-1">
             <div className="carrosel">
-            {/* <Slider imagem={image}  /> */}
-              <img src={singleProduct.imageUrl} className="slid3r"  alt="" />
+              {/* <Slider imagem={image}  /> */}
+              <img src={singleProduct.imageUrl} className="slid3r" alt="" />
             </div>
           </div>
           <div className="second-div-section-detalhes">
@@ -115,10 +113,12 @@ export const Details = React.memo(() => {
                     </div>
                   </div>
                 </div>
-                <button className="button-comprar-section-detalhes">
-                  {" "}
-                  comprar
-                </button>
+                <Link to="/comprar">
+                  <button className="button-comprar-section-detalhes">
+                    {" "}
+                    comprar
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

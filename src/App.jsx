@@ -11,6 +11,7 @@ import { useRef, useState } from "react";
 import { Cadastro } from "./Components/formularios/Cadastro";
 import { Cart } from "./Pages/Cart/Cart";
 
+
 function App() {
   const [name, Setname] = useState();
   const [address, Setendereco] = useState();
@@ -32,8 +33,12 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
+<<<<<<< HEAD
           <Route path="/cart" element={<Cart />}></Route>
           
+=======
+          <Route path="comprar" element={<FormularioComprar />} />
+>>>>>>> a3f2bfa61d1ab5061f10bc63802317e931a78e70
         </Routes>
       </BrowserRouter>
     </>
