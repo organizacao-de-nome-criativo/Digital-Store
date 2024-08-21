@@ -16,7 +16,7 @@ export const API = async (path, method = "GET", body = undefined, token1) => {
     return await fetch(`http://localhost:3000/${path}`, {
       headers: {
         "Content-type": "application/json",
-        authorization: `${token1}`,
+        authorization: `Bearer ${token1}`,
       },
       credentials: "include",
       method,

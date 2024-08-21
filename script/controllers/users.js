@@ -54,7 +54,6 @@ const register = async (req, res) => {
   }
 };
 
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -93,19 +92,20 @@ const login = async (req, res) => {
   }
 };
 
-
 const auth = (req, res, next) => {
   try {
     const { authorization } = req.headers;
     console.log(authorization);
+    console.log(authorization);
+    const token = authorization && authorization.split(" ")[1];
 
-    console.log("o token é esse", authorization);
-    if (authorization == null) {
+    console.log("o token é esse", token);
+    if (token == null) {
       throw new Error("se cadastre primeiro ou acesse no modo anonimo");
     }
-    const decoded = jwt.verify(authorization, mysecretpassword);
+    const decoded = jwt.verify(token, mysecretpassword);
     console.log(decoded);
-    req.user = decoded;
+    if (decoded) req.user = decoded;
     next();
   } catch (error) {
     console.log(error);
