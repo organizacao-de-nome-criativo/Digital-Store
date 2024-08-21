@@ -2,19 +2,26 @@ import { useState } from "react"
 import './count.css'
 
 
-export const Count = () => {
+export const Count = ({ onChange }) => {
     let [count, setCount] = useState(1)
-
-    const add = () => { 
-        setCount(count + 1)
-    }
+    const [index, setIndex] = useState()
 
     
+
+
+    const add = () => { 
+        const newCount = count + 1 
+        setCount(count + 1)
+        onChange(newCount)
+    }
+
     const decrease = () => {
         if(count === 0){
             count = 0
         }else{
-            setCount(count - 1)
+            const newCount = count - 1
+            setCount(newCount)
+            onChange(newCount)
         }
         
     }

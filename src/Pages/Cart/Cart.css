@@ -1,6 +1,7 @@
 .main-cart{
     min-height: 500px;
     background-color: var(--main-color);
+    display: flex;
 }
 .container{
     max-width: 1200px;
@@ -8,9 +9,9 @@
     margin: auto;
 }
 
-.data-cart{
+/* .data-cart{
     padding: 40px;
-}
+} */
 .card-sell{
     background-color: #FFFFFF;
     box-shadow: 0px 0px 18px -7px rgb(221, 221, 221);
@@ -108,3 +109,14 @@ table.customTable thead {
     background-color: var(--theme-color);
     color: var(--backGr-2);
 }
+
+
+.asside{
+    width: 400px;
+    height: 400px;
+    border: 1px solid #e2e2e2;
+    margin-top: 3em;
+    margin-right: 4em;
+}
+
+
