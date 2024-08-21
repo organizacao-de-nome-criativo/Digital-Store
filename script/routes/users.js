@@ -12,6 +12,9 @@ const address = require("../models/address");
 router.get("/", controllers.Getusers);
 router.post("/register", controllers.register);
 router.post("/login", controllers.login);
+router.get("/profile", controllers.auth, (req, res) => {
+ res.json('ola lucas')
+});
 router.get("/:id/address", async (req, res) => {
   const { id } = req.params;
   const user = await User.findOne({
@@ -38,7 +41,5 @@ router.post("/CriarAddres/:id", async (req, res) => {
   await FunctionAddress(req, res, id);
   res.json("deu tudo certo , a inserção no mesmo usuário");
 });
-
-router.get("/register/profile", controllers.auth, controllers.profile);
 
 module.exports = router;

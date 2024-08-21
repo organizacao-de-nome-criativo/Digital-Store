@@ -1,6 +1,7 @@
 require("dotenv").config(); // Carrega variáveis de ambiente do arquivo .env
 const Sequelize = require("sequelize");
 const config = require("./config/config.js");
+console.log(process.env.SECRET_KEY);
 
 const env = process.env.NODE_ENV;
 
