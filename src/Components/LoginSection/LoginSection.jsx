@@ -7,7 +7,7 @@ import "./inputText.css";
 import { LoginUser } from "../../services/LoginUser";
 
 export const LoginSection = () => {
-  const { FetchLogin } = LoginUser();
+  const { FetchLogin, errorLogin } = LoginUser();
 
   return (
     <form className="login-flex-section" onSubmit={FetchLogin}>
@@ -64,6 +64,7 @@ export const LoginSection = () => {
           <div className="login-button">
             <Button nome={"Acessar Conta"} type={"submit"} />
           </div>
+          {errorLogin ? errorLogin : ""}
 
           <span className="subtitle login-type">
             Ou faça login com

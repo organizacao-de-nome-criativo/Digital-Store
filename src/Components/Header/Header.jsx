@@ -1,8 +1,20 @@
 import "./Header.css";
 import { Button } from "../Button/Button";
 import { Nav } from "../Nav/Nav";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { RotaSegura } from "../../services/AuthUser";
 export const Header = ({ style }) => {
+  const { Auth, error, userName } = RotaSegura();
+  // const { boolean } = useParams();
+
+  useEffect(() => {
+    Auth();
+  }, []);
+  if (error) {
+    alert(error);
+  }
+
   return (
     <header className={"flex-section-head " + style}>
       <section className="head-main">
@@ -15,6 +27,7 @@ export const Header = ({ style }) => {
         </div>
         <div className="user-register">
           <Link to="/cadastro">Cadastre-se</Link>
+          {userName ? `olá ${userName}` : ""}
 
           <div className="enter-button">
             <Link to="/Login">

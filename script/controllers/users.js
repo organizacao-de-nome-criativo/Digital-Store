@@ -1,10 +1,13 @@
-const { User } = require("../models");
 require("dotenv").config();
+const { User } = require("../models");
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { json } = require("sequelize");
+const mysecretpassword = "mysecretpassword";
+
 const ControllersAddres = require("../controllers/address");
-const chavescrreta = 12345;
+const { Error } = require("sequelize");
+
+console.log("ola");
 console.log(process.env.SECRET_KEY);
 
 const Getusers = async (req, res) => {
@@ -52,7 +55,6 @@ const register = async (req, res) => {
   }
 };
 
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -67,21 +69,18 @@ const login = async (req, res) => {
     console.log(dataValues.password);
     const passwordMatch = await bycript.compare(password, dataValues.password);
     console.log(passwordMatch);
+    console.log("ola mundo");
 
     if (!passwordMatch) {
+      console.log(12346);
       throw new Error("senhas não compatíveis");
     }
 
     console.log(dataValues);
-
-    const token = jwt.sign(
-      { id: dataValues.id, username: dataValues.name },
-      process.env.SECRET_KEY,
-      {
-        expiresIn: "1h",
-        algorithm: "HS256",
-      }
-    );
+    const token = jwt.sign(dataValues, process.env.SECRET_KEY, {
+      expiresIn: "1h",
+    });
+    // console.log(token);
     // res.cookie("authorization", token, {
     //   httpOnly: true,
     //   secure: true,
@@ -94,27 +93,28 @@ const login = async (req, res) => {
   }
 };
 
-
 const auth = (req, res, next) => {
   try {
     const { authorization } = req.headers;
-    console.log(authorization);
-    console.log(12245);
-    const token = authorization && authorization.split("")[1];
-    console.log(token);
+
+    const token = authorization && authorization.split(" ")[1];
+
     if (token == null) {
       throw new Error("se cadastre primeiro ou acesse no modo anonimo");
     }
-    jwt.verify(token, process.env.SECRET_KEY, (error, payload) => {
-      console.log(error);
-      if (error) {
-        throw new Error("token invalido");
+    jwt.verify(token, process.env.SECRET_KEY, (err, payload) => {
+      if (err) {
+        if (err.name === jwt.TokenExpiredError) {
+          res.redirect("futura rota de restauração de token");
+        }
+        throw new Error("não foi possivel validar o token");
       }
-      console.log(payload);
+      req.user = payload;
       next();
     });
   } catch (error) {
-    res.status(500).json(error.message);
+    console.log(error);
+    res.status(500).json({ message: error });
   }
 
   // abordagem com o cookie sendo enviado pelo navegador
@@ -124,14 +124,11 @@ const auth = (req, res, next) => {
   //   res.json("cookie não encontrado tente novamente");
   // }
 
-  // next();
+  next();
 };
 const profile = async (req, res) => {
-  try {
-    res.send(
-      "bem vindo usuário autenticado, sinta-se avontade na sua nova casa"
-    );
-  } catch (err) {}
+  const user = req.user;
+  res.json(user);
 };
 
 module.exports = {

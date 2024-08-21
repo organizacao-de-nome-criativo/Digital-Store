@@ -11,7 +11,6 @@ import { useRef, useState } from "react";
 import { Cadastro } from "./Components/formularios/Cadastro";
 import { Cart } from "./Pages/Cart/Cart";
 
-
 function App() {
   const [name, Setname] = useState();
   const [address, Setendereco] = useState();
@@ -35,6 +34,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="cart" element={<Cart />}></Route>
           {/* <Route path="comprar" element={<FormularioComprar />} /> */}
+          <Route path="isAlone:boolean" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
