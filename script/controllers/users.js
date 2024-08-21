@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const mysecretpassword = "mysecretpassword";
 
 const ControllersAddres = require("../controllers/address");
+const { Error } = require("sequelize");
 
 console.log("ola");
 console.log(process.env.SECRET_KEY);
@@ -76,7 +77,7 @@ const login = async (req, res) => {
     }
 
     console.log(dataValues);
-    const token = jwt.sign(dataValues, mysecretpassword, {
+    const token = jwt.sign(dataValues, process.env.SECRET_KEY, {
       expiresIn: "1h",
     });
     // console.log(token);
@@ -95,18 +96,22 @@ const login = async (req, res) => {
 const auth = (req, res, next) => {
   try {
     const { authorization } = req.headers;
-    console.log(authorization);
-    console.log(authorization);
+
     const token = authorization && authorization.split(" ")[1];
 
-    console.log("o token é esse", token);
     if (token == null) {
       throw new Error("se cadastre primeiro ou acesse no modo anonimo");
     }
-    const decoded = jwt.verify(token, mysecretpassword);
-    console.log(decoded);
-    if (decoded) req.user = decoded;
-    next();
+    jwt.verify(token, process.env.SECRET_KEY, (err, payload) => {
+      if (err) {
+        if (err.name === jwt.TokenExpiredError) {
+          res.redirect("futura rota de restauração de token");
+        }
+        throw new Error("não foi possivel validar o token");
+      }
+      req.user = payload;
+      next();
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error });
@@ -122,11 +127,8 @@ const auth = (req, res, next) => {
   next();
 };
 const profile = async (req, res) => {
-  try {
-    res.send(
-      "bem vindo usuário autenticado, sinta-se avontade na sua nova casa"
-    );
-  } catch (err) {}
+  const user = req.user;
+  res.json(user);
 };
 
 module.exports = {
