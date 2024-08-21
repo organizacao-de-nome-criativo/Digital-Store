@@ -1,0 +1,73 @@
+.main-cart{
+    min-height: 500px;
+    background-color: var(--main-color);
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.data-cart{
+    padding: 40px;
+}
+.card-sell{
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 18px -7px rgb(221, 221, 221);
+}
+table.customTable {
+    margin-top: 3em;
+    width: 100%;
+    
+    border-collapse: collapse;
+    color: #000000;
+}
+
+
+table.customTable td:nth-child(1){
+display: flex;
+width: 450px;
+align-items: center;
+/* justify-content: space-between; */
+}
+
+
+table.customTable  td  img{
+width: 200px;
+}
+
+table.customTable  td  p{
+width: 200px;
+}
+
+
+.data-product{
+font-size: 1em;
+}
+
+.data-product h5{
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.data-product p{
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0,8em;
+}
+
+table.customTable td, table.customTable th {
+/* padding: 30px; */
+text-align: start;
+border-bottom: 1px solid #ddd;
+padding: 5px;
+}
+
+table.customTable thead {
+font-family: "Inter";
+color: var(--text-color);
+}
+
+.addictionais-informations{
+    display: flex;
+}

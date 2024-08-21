@@ -39,10 +39,11 @@ const register = async (req, res) => {
       .json({ error: "não foi possivel carregar o usuário " + err.message });
   }
 };
+
+
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-
     console.log(email, password);
 
     const usuario = await User.findOne({ where: { email } });
@@ -69,6 +70,8 @@ const login = async (req, res) => {
     res.status(404).json(error.message);
   }
 };
+
+
 const auth = (req, res, next) => {
   const { Authorization } = req.headers;
   const token = Authorization && Authorization.split("")[1];
