@@ -18,31 +18,32 @@
 table.customTable {
     margin-top: 3em;
     width: 100%;
-    
     border-collapse: collapse;
     color: #000000;
 }
 
 
 table.customTable td:nth-child(1){
-display: flex;
-width: 450px;
-align-items: center;
-/* justify-content: space-between; */
+    display: flex;
+    width: 450px;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
 
 table.customTable  td  img{
-width: 200px;
+    width: 200px;
 }
 
 table.customTable  td  p{
-width: 200px;
+    width: 200px;
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 
 .data-product{
-font-size: 1em;
+    font-size: 1em;
 }
 
 .data-product h5{
@@ -57,17 +58,53 @@ font-size: 1em;
 }
 
 table.customTable td, table.customTable th {
-/* padding: 30px; */
-text-align: start;
-border-bottom: 1px solid #ddd;
-padding: 5px;
+    /* padding: 30px; */
+    text-align: start;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
 }
 
 table.customTable thead {
-font-family: "Inter";
-color: var(--text-color);
+    text-transform:uppercase;
+    font-weight: 400;
+    color: var(--text-color);
 }
 
 .addictionais-informations{
     display: flex;
+    justify-content: space-around;
+    height: 200px;
+    align-items: center;
+}
+.addictionais-informations .discount-cep{
+    width: 400px;
+}
+
+.addictionais-informations input{
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    border:none;
+    background-color: var(--backGr-2);
+    margin: 2em 2em 0 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.addictionais-informations button{
+    width: 110px;
+    height: 60px;
+    border: none;
+    background-color: var(--backGr-2);
+    border-radius: 8px;
+    color: var(--theme-color);
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.addictionais-informations button:hover{
+    background-color: var(--theme-color);
+    color: var(--backGr-2);
 }

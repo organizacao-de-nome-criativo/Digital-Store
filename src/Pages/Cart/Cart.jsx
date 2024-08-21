@@ -52,13 +52,13 @@ export const Cart = () => {
                         <div className="addictionais-informations container">
                             <div className="discount-cep">
                                 <h5>Cupom de desconto</h5>
-                                <input type="text" name="" id="" />
+                                <input type="text" name="" id="" placeholder='Insira o seu código'/>
                                 <button>ok</button>
                             </div>
                             <div className="discount-cep">
-                                    <h5>Calcular Frete</h5>
-                                    <input type="text" name="" id="" />
-                                    <button>ok</button>
+                                <h5>Calcular Frete</h5>
+                                <input type="text" name="" id="" placeholder='Insira seu CEP'/>
+                                <button>ok</button>
                             </div>
                         </div>
                     </div>

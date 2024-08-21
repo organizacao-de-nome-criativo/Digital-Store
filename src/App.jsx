@@ -33,12 +33,8 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
-<<<<<<< HEAD
-          <Route path="/cart" element={<Cart />}></Route>
-          
-=======
-          <Route path="comprar" element={<FormularioComprar />} />
->>>>>>> a3f2bfa61d1ab5061f10bc63802317e931a78e70
+          <Route path="cart" element={<Cart />}></Route>
+          {/* <Route path="comprar" element={<FormularioComprar />} /> */}
         </Routes>
       </BrowserRouter>
     </>
