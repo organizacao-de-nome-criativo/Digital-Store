@@ -13,7 +13,9 @@ router.get("/", controllers.Getusers);
 router.post("/register", controllers.register);
 router.post("/login", controllers.login);
 router.get("/profile", controllers.auth, (req, res) => {
- res.json('ola lucas')
+  console.log("ola mundo, estou chegando aqui numa rota segura");
+  const user = req.user;
+  res.json(user);
 });
 router.get("/:id/address", async (req, res) => {
   const { id } = req.params;

@@ -1,19 +1,31 @@
-export const API = async (path, method = "GET", body = undefined) => {
+export const API = async (path, method = "GET", body = undefined, token1) => {
+  console.log(token1);
+
   if (body) {
     return await fetch(`http://localhost:3000/${path}`, {
       headers: {
         "Content-type": "application/json",
       },
+      credentials: "include",
       method: method,
       body: JSON.stringify(body),
     });
   }
 
-  return await fetch(`http://localhost:3000/${path}/` , {
+  if (token1) {
+    return await fetch(`http://localhost:3000/${path}`, {
+      headers: {
+        "Content-type": "application/json",
+        authorization: `${token1}`,
+      },
+      credentials: "include",
+      method,
+    });
+  }
+  return await fetch(`http://localhost:3000/${path}`, {
     headers: {
-      'Content-Type': 'application/json'
+      "Content-type": "application/json",
     },
-    method: method
   });
 };
 async function casa() {

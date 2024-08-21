@@ -1,5 +1,6 @@
 require("dotenv").config();
 var createError = require("http-errors");
+console.log(process.env.DB_NAME);
 const cors = require("cors");
 var express = require("express");
 var path = require("path");

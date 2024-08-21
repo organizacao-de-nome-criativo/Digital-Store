@@ -1,10 +1,12 @@
-const { User } = require("../models");
 require("dotenv").config();
+const { User } = require("../models");
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { json } = require("sequelize");
+const mysecretpassword = "mysecretpassword";
+
 const ControllersAddres = require("../controllers/address");
-const chavescrreta = 12345;
+
+console.log("ola");
 console.log(process.env.SECRET_KEY);
 
 const Getusers = async (req, res) => {
@@ -66,21 +68,18 @@ const login = async (req, res) => {
     console.log(dataValues.password);
     const passwordMatch = await bycript.compare(password, dataValues.password);
     console.log(passwordMatch);
+    console.log("ola mundo");
 
     if (!passwordMatch) {
+      console.log(12346);
       throw new Error("senhas não compatíveis");
     }
 
     console.log(dataValues);
-
-    const token = jwt.sign(
-      { id: dataValues.id, username: dataValues.name },
-      process.env.SECRET_KEY,
-      {
-        expiresIn: "1h",
-        algorithm: "HS256",
-      }
-    );
+    const token = jwt.sign(dataValues, mysecretpassword, {
+      expiresIn: "1h",
+    });
+    // console.log(token);
     // res.cookie("authorization", token, {
     //   httpOnly: true,
     //   secure: true,
@@ -96,22 +95,18 @@ const auth = (req, res, next) => {
   try {
     const { authorization } = req.headers;
     console.log(authorization);
-    console.log(12245);
-    const token = authorization && authorization.split("")[1];
-    console.log(token);
-    if (token == null) {
+
+    console.log("o token é esse", authorization);
+    if (authorization == null) {
       throw new Error("se cadastre primeiro ou acesse no modo anonimo");
     }
-    jwt.verify(token, process.env.SECRET_KEY, (error, payload) => {
-      console.log(error);
-      if (error) {
-        throw new Error("token invalido");
-      }
-      console.log(payload);
-      next();
-    });
+    const decoded = jwt.verify(authorization, mysecretpassword);
+    console.log(decoded);
+    req.user = decoded;
+    next();
   } catch (error) {
-    res.status(500).json(error.message);
+    console.log(error);
+    res.status(500).json({ message: error });
   }
 
   // abordagem com o cookie sendo enviado pelo navegador
@@ -121,7 +116,7 @@ const auth = (req, res, next) => {
   //   res.json("cookie não encontrado tente novamente");
   // }
 
-  // next();
+  next();
 };
 const profile = async (req, res) => {
   try {
