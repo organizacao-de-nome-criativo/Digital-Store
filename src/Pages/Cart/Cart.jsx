@@ -2,7 +2,7 @@ import './Cart.css'
 import { Footer } from "../../Components/Footer/Footer"
 import { Header } from "../../Components/Header/Header"
 import { Count } from '../../Components/Count/Count'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const carrinho = [
     {
@@ -28,15 +28,34 @@ const carrinho = [
         cor: 'Azul',
         tamanho: '43',
         preco: 319.00
+    },
+    {
+        id: 4,
+        imgUrl: 'https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9',
+        titulo: 'Tênis Nike Revolution 6 Next Nature Masculino',
+        cor: 'Azul',
+        tamanho: '43',
+        preco: 79.00
     }
 ]
 
 
 export const Cart = () => {
     const [newPrice, setNewPrice] = useState(carrinho.map(produto => produto.preco))
+    const [showTotal, setShowTotal] = useState(0)
+
+    useEffect(() => {
+        const total = () =>{
+            
+            const totalOrder = [...newPrice]
+            const totalValue = totalOrder.reduce((acc, currentValue) => currentValue + acc, 0)
+            setShowTotal(totalValue.toFixed(2))
+            console.log(totalValue)
+        }
+        total()
+    },[newPrice])
     
-    
-    const handleNewCount = (index, newCount) =>{
+    const handleNewCount = (index, newCount) => {
         const newCarrinho = [...newPrice]
         newCarrinho[index] = newCount * carrinho[index].preco
         setNewPrice(newCarrinho)
@@ -107,7 +126,7 @@ export const Cart = () => {
                     <div className="total">
                         <div className='value-order'>
                             <h4>Total</h4>
-                            <h4>219,00</h4>
+                            <h4>R$ {showTotal}</h4>
                         </div>
                         <button>Continuar</button>
                     </div>
