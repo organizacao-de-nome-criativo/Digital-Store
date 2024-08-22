@@ -104,6 +104,13 @@ export const Cart = () => {
                         <p>Desconto</p>
                         <p>R$ 0,00</p>
                     </div>
+                    <div className="total">
+                        <div className='value-order'>
+                            <h4>Total</h4>
+                            <h4>219,00</h4>
+                        </div>
+                        <button>Continuar</button>
+                    </div>
                 </div>
             </div>
             <Footer />

@@ -95,11 +95,6 @@ export const Details = React.memo(() => {
                   <div className="div-tamanhos-1">
                     <p> tamanho</p>
                     <div className="div-tamanhos">
-                      {/* <div>39</div>
-                      <div>40</div>
-                      <div>41</div>
-                      <div>42</div>
-                      <div>43 </div> */}
                       <Div />
                     </div>
                   </div>
@@ -132,7 +127,7 @@ export const Details = React.memo(() => {
           </div>
         </section>
       </main>
-
+    
       <Footer />
     </>
   );
