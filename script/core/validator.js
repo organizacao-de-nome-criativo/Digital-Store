@@ -8,8 +8,8 @@ export const validation = () => {
   const [errorCpf, SetErrorCpf] = useState();
 
   const name = (evento) => {
-    if (evento.target.value.length < 20) {
-      return Seterro("o campo deve ter pelo menos 20 caracters ");
+    if (evento.target.value.length < 5) {
+      return Seterro("o campo deve ter pelo menos 5 caracters ");
     }
     Seterro();
   };

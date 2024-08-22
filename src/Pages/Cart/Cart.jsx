@@ -18,7 +18,7 @@ const carrinho = [
         imgUrl: 'https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9',
         titulo: 'Tênis Nike Revolution 6 Next Nature Masculino',
         cor: 'Azul',
-        Tamanho: '43',
+        tamanho: '43',
         preco: 219.00
     },
     {
@@ -26,7 +26,7 @@ const carrinho = [
         imgUrl: 'https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9',
         titulo: 'Tênis Nike Revolution 6 Next Nature Masculino',
         cor: 'Azul',
-        Tamanho: '43',
+        tamanho: '43',
         preco: 319.00
     }
 ]

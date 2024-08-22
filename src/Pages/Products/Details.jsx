@@ -113,11 +113,8 @@ export const Details = React.memo(() => {
                     </div>
                   </div>
                 </div>
-                <Link to="/comprar">
-                  <button className="button-comprar-section-detalhes">
-                    {" "}
-                    comprar
-                  </button>
+                <Link to="/cart">
+                  <button className="button-comprar-section-detalhes">comprar</button>
                 </Link>
               </div>
             </div>

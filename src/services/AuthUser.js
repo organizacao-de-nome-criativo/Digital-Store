@@ -27,7 +27,7 @@ export const RotaSegura = () => {
     } catch (error) {
       console.log(error);
       setTimeout(() => {
-        redirecit("login");
+        // redirecit("login");
       }, 2000);
       Serror(error.name);
     }

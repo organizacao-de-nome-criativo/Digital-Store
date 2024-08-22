@@ -4,6 +4,7 @@ import { Nav } from "../Nav/Nav";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RotaSegura } from "../../services/AuthUser";
+// import userIcon from '../../assets/userIcon'
 export const Header = ({ style }) => {
   const { Auth, error, userName } = RotaSegura();
   // const { boolean } = useParams();
@@ -14,6 +15,7 @@ export const Header = ({ style }) => {
   if (error) {
     alert(error);
   }
+  
 
   return (
     <header className={"flex-section-head " + style}>
@@ -24,14 +26,17 @@ export const Header = ({ style }) => {
         <div className="search-input">
           <input type="text" name="" id="" placeholder="Pesquisar produto..." />
           <img src="src/assets/search-icon.png" alt=""></img>
+          
         </div>
-        <div className="user-register">
-          <Link to="/cadastro">Cadastre-se</Link>
-          {userName ? `olá ${userName}` : ""}
 
-          <div className="enter-button">
+        <div className="user-register">
+          <div className="userLog">
+            {userName ? <img src="src/assets/userIcon.png" alt="" /> : ''}
+            {userName ? `olá ${userName}` : <Link to="/cadastro">Cadastre-se</Link>}
+          </div>
+          <div className="enter-button" onClick={() => localStorage.removeItem('auth')}>
             <Link to="/Login">
-              <Button nome={"Entrar"} />
+              {userName ? <Button nome={"Sair"}/> : <Button nome={"Entrar"} />}
             </Link>
           </div>
         </div>
