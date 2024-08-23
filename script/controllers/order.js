@@ -92,6 +92,7 @@ const getOrders = async (req, res) => {
 };
 const replaceAmount = async (req, res) => {
   const { NewCount, ProductId, UserId } = req.query;
+  console.log(NewCount);
   console.log(`meu valores ${NewCount} ${ProductId}`);
 
   console.log(UserId);
