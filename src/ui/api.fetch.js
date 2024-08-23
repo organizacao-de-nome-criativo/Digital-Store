@@ -1,5 +1,5 @@
 export const API = async (path, method = "GET", body = undefined, token1) => {
-  console.log(token1);
+  // console.log(token1);
 
   if (body) {
     return await fetch(`http://localhost:3000/${path}`, {

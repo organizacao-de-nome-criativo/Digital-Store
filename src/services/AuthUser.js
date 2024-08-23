@@ -16,7 +16,7 @@ export const RotaSegura = () => {
       const response = await API("users/profile", "GET", undefined, meuvalor);
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       if (data.message) {
         throw new Error(data.message);
       }
@@ -26,7 +26,7 @@ export const RotaSegura = () => {
       SetUsername(data.name.slice(0, indexSpace));
       return data;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setTimeout(() => {
         // redirecit("login");
       }, 2000);

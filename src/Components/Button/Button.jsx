@@ -4,7 +4,7 @@ export const Button = ({nome, link, style, type, remove}) => {
   // if(!remove){
   //   localStorage.removeItem('auth')
   // }
-  console.log(typeof remove)
+  // console.log(typeof remove)
 
   return (
     <> 
