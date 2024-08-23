@@ -12,10 +12,9 @@ export const Header = ({ style }) => {
   useEffect(() => {
     Auth();
   }, []);
-  if (error) {
-    alert(error);
-  }
-  
+  // if (error) {
+  //   alert(error);
+  // }
 
   return (
     <header className={"flex-section-head " + style}>
@@ -26,17 +25,23 @@ export const Header = ({ style }) => {
         <div className="search-input">
           <input type="text" name="" id="" placeholder="Pesquisar produto..." />
           <img src="src/assets/search-icon.png" alt=""></img>
-          
         </div>
 
         <div className="user-register">
           <div className="userLog">
-            {userName ? <img src="src/assets/userIcon.png" alt="" /> : ''}
-            {userName ? `olá ${userName}` : <Link to="/cadastro">Cadastre-se</Link>}
+            {userName ? <img src="src/assets/userIcon.png" alt="" /> : ""}
+            {userName ? (
+              `olá ${userName}`
+            ) : (
+              <Link to="/cadastro">Cadastre-se</Link>
+            )}
           </div>
-          <div className="enter-button" onClick={() => localStorage.removeItem('auth')}>
+          <div
+            className="enter-button"
+            onClick={() => localStorage.removeItem("auth")}
+          >
             <Link to="/Login">
-              {userName ? <Button nome={"Sair"}/> : <Button nome={"Entrar"} />}
+              {userName ? <Button nome={"Sair"} /> : <Button nome={"Entrar"} />}
             </Link>
           </div>
         </div>

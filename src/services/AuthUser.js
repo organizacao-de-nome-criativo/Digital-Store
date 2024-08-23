@@ -24,6 +24,7 @@ export const RotaSegura = () => {
       const indexSpace = data.name.indexOf(" ");
 
       SetUsername(data.name.slice(0, indexSpace));
+      return data;
     } catch (error) {
       console.log(error);
       setTimeout(() => {

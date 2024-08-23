@@ -3,7 +3,7 @@ const router = express.Router();
 const controllers = require("../controllers/order.js");
 const { json } = require("sequelize");
 
-router.get("/:id", controllers.getOrders);
-router.post("/:id", controllers.createOrder);
+router.get("/create", controllers.createOrder, controllers.getOrders);
+router.get("/replace", controllers.replaceAmount);
 
 module.exports = router;
