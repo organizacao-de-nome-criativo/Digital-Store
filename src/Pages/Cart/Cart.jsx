@@ -46,7 +46,6 @@ export const Cart = () => {
 
     useEffect(() => {
         const total = () =>{
-            
             const totalOrder = [...newPrice]
             const totalValue = totalOrder.reduce((acc, currentValue) => currentValue + acc, 0)
             setShowTotal(totalValue.toFixed(2))
