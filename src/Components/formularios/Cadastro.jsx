@@ -209,7 +209,7 @@ export const Cadastro = () => {
                 />
               </div>
             </div>
-            {loadig ? "loading" : ""}
+            {loadig ? <span class="loader">teste</span> : ""}
             {error ? error.message : ""}
           </div>
           <div className="input-checbock">
