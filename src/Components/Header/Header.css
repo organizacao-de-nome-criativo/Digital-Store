@@ -63,8 +63,13 @@
   height: 2.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+.userLog{
+  display: flex;
+  width: 125px;
+  justify-content: space-around;
 }
 .user-register a {
   color: black;

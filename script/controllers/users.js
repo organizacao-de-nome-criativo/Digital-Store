@@ -1,9 +1,14 @@
-const { User } = require("../models");
 require("dotenv").config();
+const { User } = require("../models");
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { json } = require("sequelize");
+const mysecretpassword = "mysecretpassword";
+
 const ControllersAddres = require("../controllers/address");
+const { Error } = require("sequelize");
+
+console.log("ola");
+console.log(process.env.SECRET_KEY);
 
 const Getusers = async (req, res) => {
   const todosusuarios = await User.findAll();
@@ -13,6 +18,16 @@ const Getusers = async (req, res) => {
 const register = async (req, res) => {
   try {
     const { name, email, CPF, phone, password } = req.body;
+
+    const user = await User.findOne({
+      where: {
+        email,
+      },
+    });
+    console.log(user);
+    if (user) {
+      throw new Error("email ja cadastrado");
+    }
 
     console.log(name);
     const camada_cripotografia = 10;
@@ -36,13 +51,13 @@ const register = async (req, res) => {
     // res.json("não foi possivel carregar  o usuer");
     res
       .status(500)
-      .json({ error: "não foi possivel carregar o usuário " + err.message });
+      .json({ error: "não foi possivel cadastrar o usuário " + err.message });
   }
 };
+
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-
     console.log(email, password);
 
     const usuario = await User.findOne({ where: { email } });
@@ -54,42 +69,66 @@ const login = async (req, res) => {
     console.log(dataValues.password);
     const passwordMatch = await bycript.compare(password, dataValues.password);
     console.log(passwordMatch);
+    console.log("ola mundo");
 
     if (!passwordMatch) {
+      console.log(12346);
       throw new Error("senhas não compatíveis");
     }
-    console.log(dataValues);
 
-    const token = jwt.sign({ dataValues }, process.env.SECRET_KEY, {
+    console.log(dataValues);
+    const token = jwt.sign(dataValues, process.env.SECRET_KEY, {
       expiresIn: "1h",
     });
-
+    // console.log(token);
+    // res.cookie("authorization", token, {
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: "lax",
+    //   maxAge: "3600000",
+    // });
     res.status("200").json({ token });
   } catch (error) {
     res.status(404).json(error.message);
   }
 };
+
 const auth = (req, res, next) => {
-  const { Authorization } = req.headers;
-  const token = Authorization && Authorization.split("")[1];
-  if (token == null) {
-    res.status(404).send("token não encontrado");
-  }
-  jwt.verify(token, process.env.SECRET_KEY, (error, payload) => {
-    console.log(error);
-    if (error) {
-      res.send("token invalido");
+  try {
+    const { authorization } = req.headers;
+
+    const token = authorization && authorization.split(" ")[1];
+
+    if (token == null) {
+      throw new Error("se cadastre primeiro ou acesse no modo anonimo");
     }
-    console.log(payload);
-    next();
-  });
+    jwt.verify(token, process.env.SECRET_KEY, (err, payload) => {
+      if (err) {
+        if (err.name === jwt.TokenExpiredError) {
+          res.redirect("futura rota de restauração de token");
+        }
+        throw new Error("não foi possivel validar o token");
+      }
+      req.user = payload;
+      next();
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error });
+  }
+
+  // abordagem com o cookie sendo enviado pelo navegador
+  // const token = req.cookie.authorization;
+  // console.log(token);
+  // if (!token) {
+  //   res.json("cookie não encontrado tente novamente");
+  // }
+
+  next();
 };
 const profile = async (req, res) => {
-  try {
-    res.send(
-      "bem vindo usuário autenticado, sinta-se avontade na sua nova casa"
-    );
-  } catch (err) {}
+  const user = req.user;
+  res.json(user);
 };
 
 module.exports = {

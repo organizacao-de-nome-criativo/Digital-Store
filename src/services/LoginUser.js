@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { API } from "../ui/api.fetch";
+import { useNavigate } from "react-router-dom";
 
 export const LoginUser = () => {
-  const [error, seterror] = useState(null);
+  const redirect = useNavigate();
+  const [errorLogin, seterror] = useState();
 
   const FetchLogin = async (evento) => {
     evento.preventDefault();
@@ -12,12 +14,23 @@ export const LoginUser = () => {
     try {
       const response = await API("users/login", "POST", body);
       const data = await response.json();
-      console.log(data);
-    } catch (error) {}
+      console.log(data)
+      const { token } = data;
+      console.log(token);
+      if (!token) {
+        throw new Error("usuário não autenticado, se cadastre primeiro");
+      }
+
+      localStorage.setItem("auth", token);
+      console.log("12345");
+      redirect("/");
+    } catch (error) {
+      seterror(error.message);
+    }
   };
 
   return {
-    error,
+    errorLogin,
     FetchLogin,
   };
 };

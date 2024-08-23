@@ -9,6 +9,7 @@ import { Login } from "./Pages/Login/Login";
 
 import { useRef, useState } from "react";
 import { Cadastro } from "./Components/formularios/Cadastro";
+import { Cart } from "./Pages/Cart/Cart";
 
 function App() {
   const [name, Setname] = useState();
@@ -31,7 +32,9 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
-          
+          <Route path="cart/:Id" element={<Cart />}></Route>
+          {/* <Route path="comprar" element={<FormularioComprar />} /> */}
+          <Route path="isAlone:boolean" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>

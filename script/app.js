@@ -1,5 +1,6 @@
 require("dotenv").config();
 var createError = require("http-errors");
+console.log(process.env.DB_NAME);
 const cors = require("cors");
 var express = require("express");
 var path = require("path");
@@ -11,7 +12,12 @@ const productsRouter = require("./routes/product");
 const ordersRouter = require("./routes/order");
 const RotaLojas = require("./routes/lojas");
 var app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // view engine setup
 // app.set("views", path.join(__dirname, "views"));
