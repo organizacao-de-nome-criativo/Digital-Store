@@ -32,7 +32,7 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="cadastro" element={<Cadastro />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="cart" element={<Cart />}></Route>
+          <Route path="cart/:Id" element={<Cart />}></Route>
           {/* <Route path="comprar" element={<FormularioComprar />} /> */}
           <Route path="isAlone:boolean" element={<Home />} />
         </Routes>

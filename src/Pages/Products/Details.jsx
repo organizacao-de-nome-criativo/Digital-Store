@@ -108,8 +108,10 @@ export const Details = React.memo(() => {
                     </div>
                   </div>
                 </div>
-                <Link to="/cart">
-                  <button className="button-comprar-section-detalhes">comprar</button>
+                <Link to={`/cart/${id}`}>
+                  <button className="button-comprar-section-detalhes">
+                    comprar
+                  </button>
                 </Link>
               </div>
             </div>
@@ -127,7 +129,7 @@ export const Details = React.memo(() => {
           </div>
         </section>
       </main>
-    
+
       <Footer />
     </>
   );
