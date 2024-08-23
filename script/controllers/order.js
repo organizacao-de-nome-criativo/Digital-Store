@@ -54,7 +54,7 @@ const createOrder = async (request, response) => {
         status: true,
       });
 
-      await isOldOrder.addProduct(produtoa);
+      // await isOldOrder.addProduct(produtoa);
 
       const allProducts = await isOldOrder.getProducts();
       response.json(allProducts);
@@ -72,7 +72,7 @@ const createOrder = async (request, response) => {
       amount: 1,
       status: true,
     });
-    await newOrder.addProduct(produtoa);
+    // await newOrder.addProduct(produtoa);
     const allpedidos = await newOrder.getProducts();
     response.json(allpedidos);
     return;
@@ -92,6 +92,7 @@ const getOrders = async (req, res) => {
 };
 const replaceAmount = async (req, res) => {
   const { NewCount, ProductId, UserId } = req.query;
+  console.log(NewCount);
   console.log(`meu valores ${NewCount} ${ProductId}`);
 
   console.log(UserId);

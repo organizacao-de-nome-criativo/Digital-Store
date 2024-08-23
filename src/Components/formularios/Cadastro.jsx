@@ -31,6 +31,7 @@ export const Cadastro = () => {
 
       <main className="main-sppiner">
         <form className="form-container-sppiner" onSubmit={fetcha}>
+          {spinAnimation()}
           <h1>Criar Conta</h1>
           <div className="div-global">
             <div className="form-globla-1">

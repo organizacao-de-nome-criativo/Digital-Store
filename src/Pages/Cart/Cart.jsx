@@ -105,7 +105,8 @@ export const Cart = () => {
       const data = await Auth();
       // console.log(data)
       const { id } = data;
-      const pedido = new Pedidos(id, index, newCount);
+      const productoId = parseInt(Id);
+      const pedido = new Pedidos(id, productoId, newCount);
       await pedido.ReplaceOrders();
 
       const newCarrinho = [...newPrice];
