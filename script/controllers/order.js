@@ -3,7 +3,7 @@ const order = require("../models/order");
 const { production } = require("../config/config");
 const { where, Model } = require("sequelize");
 
-const createOrder = async (request, response, next) => {
+const createOrder = async (request, response) => {
   try {
     const { UserID, produtoa } = request.query;
 
@@ -41,24 +41,26 @@ const createOrder = async (request, response, next) => {
             productId: produtoa,
           },
         });
-        request.user = isOldOrder;
-        next();
+
+        const allProducts = await isOldOrder.getProducts();
+        response.json(allProducts);
         return;
       }
-
+      console.log("estou chegando aqui");
       await OrderProductItem.create({
         orderId: isOldOrder.id,
         productId: produtoa,
         amount: 1,
         status: true,
       });
+
       await isOldOrder.addProduct(produtoa);
 
-      request.user = isOldOrder;
-      next();
+      const allProducts = await isOldOrder.getProducts();
+      response.json(allProducts);
       return;
     }
-
+    console.log("ola estou chegando aqui tbm");
     await Order.create({ User_id: UserID });
     const newOrder = await Order.findOne({
       where: { User_id: UserID },
@@ -72,8 +74,9 @@ const createOrder = async (request, response, next) => {
     });
     await newOrder.addProduct(produtoa);
     const allpedidos = await newOrder.getProducts();
-    request.user = newOrder;
-    next();
+    response.json(allpedidos);
+    return;
+    // request.user = newOrder;
   } catch (error) {
     response.status(500).json(error);
   }

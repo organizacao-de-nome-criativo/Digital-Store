@@ -57,8 +57,6 @@ export const Cart = () => {
       const ProductID = parseInt(Id);
       const pedido = new Pedidos(id, ProductID, "");
       const carrinho = await pedido.RenderOrders();
-
-      carrinho1 = carrinho;
     });
   }, []);
   console.log(carrinhoBanco);
