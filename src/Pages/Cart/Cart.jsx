@@ -7,94 +7,114 @@ import { RotaSegura } from "../../services/AuthUser";
 import { useParams } from "react-router-dom";
 import { Pedidos } from "../../services/Pedidos";
 
-let carrinho1 = [
-  {
-    id: 1,
-    imgUrl:
-      "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
-    titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
-    cor: "Vermelho",
-    tamanho: "42",
-    preco: 119.0,
-  },
-  {
-    id: 2,
-    imgUrl:
-      "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
-    titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
-    cor: "Azul",
-    tamanho: "43",
-    preco: 219.0,
-  },
-  {
-    id: 3,
-    imgUrl:
-      "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
-    titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
-    cor: "Azul",
-    tamanho: "43",
-    preco: 319.0,
-  },
-  {
-    id: 4,
-    imgUrl:
-      "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
-    titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
-    cor: "Azul",
-    tamanho: "43",
-    preco: 79.0,
-  },
-];
+// let carrinho1 = [
+//   {
+//     id: 1,
+//     imgUrl:
+//       "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
+//     titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
+//     cor: "Vermelho",
+//     tamanho: "42",
+//     preco: 119.0,
+//   },
+//   {
+//     id: 2,
+//     imgUrl:
+//       "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
+//     titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
+//     cor: "Azul",
+//     tamanho: "43",
+//     preco: 219.0,
+//   },
+//   {
+//     id: 3,
+//     imgUrl:
+//       "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
+//     titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
+//     cor: "Azul",
+//     tamanho: "43",
+//     preco: 319.0,
+//   },
+//   {
+//     id: 4,
+//     imgUrl:
+//       "https://github.com/user-attachments/assets/ac4f9e8a-399b-4563-b9a5-bc8b674364e9",
+//     titulo: "Tênis Nike Revolution 6 Next Nature Masculino",
+//     cor: "Azul",
+//     tamanho: "43",
+//     preco: 79.0,
+//   },
+// ];
 
 export const Cart = () => {
   const [carrinhoBanco, SetCarrinhoBanco] = useState([]);
+  const [newPrice, setNewPrice] = useState([]);
+  const [showTotal, setShowTotal] = useState(0);
   const { Id } = useParams();
 
+  //   console.log(newPrice)
+  // useEffect(() => {
+  //     const total = () =>{
+  //         const totalOrder = [...newPrice]
+  //         const totalValue = totalOrder.reduce((acc, currentValue) => currentValue + acc, 0)
+  //         setShowTotal(totalValue.toFixed(2))
+  //         console.log(totalValue)
+  //     }
+  //     total()
+  // },[newPrice])
+
+  // const handleNewCount = (index, newCount) => {
+  //     const newCarrinho = [...newPrice]
+  //     newCarrinho[index] = newCount * carrinho[index].preco
+  //     setNewPrice(newCarrinho)
+  // }
+
   const { Auth } = RotaSegura();
+
   useEffect(() => {
     Auth().then(async (data) => {
       const { id } = data;
+      //   console.log(id)
       const ProductID = parseInt(Id);
       const pedido = new Pedidos(id, ProductID, "");
       const carrinho = await pedido.RenderOrders();
+      SetCarrinhoBanco(carrinho);
+      setNewPrice(carrinho.map((produto) => parseInt(produto.price)));
+      //   carrinho1 = carrinho;
+      console.log(carrinho);
     });
-  }, []);
-  console.log(carrinhoBanco);
+  }, [Id]);
 
-  const [newPrice, setNewPrice] = useState(
-    carrinho1.map((produto) => produto.preco)
-  );
-  console.log(newPrice);
-  const [showTotal, setShowTotal] = useState(0);
+  //   console.log(newPrice);
 
   useEffect(() => {
     const total = () => {
       const totalOrder = [...newPrice];
       console.log(`o valor depois da mudança`, newPrice);
-
       const totalValue = totalOrder.reduce(
         (acc, currentValue) => currentValue + acc,
-
         0
       );
-      setShowTotal(totalValue.toFixed(2));
+      setShowTotal(totalValue);
     };
     total();
   }, [newPrice]);
 
   const handleNewCount = async (index, newCount) => {
-    Auth()
-      .then(async (data) => {
-        const { id } = data;
-        const pedido = new Pedidos(id, index, newCount);
-        await pedido.ReplaceOrders();
-      })
-      .catch((err) => console.log(err));
-    const newCarrinho = [...newPrice];
-    console.log(`o valor antes da mudança`, newPrice);
-    newCarrinho[index] = newCount * carrinho1[index].preco;
+    try {
+      const data = await Auth();
+      // console.log(data)
+      const { id } = data;
+      const pedido = new Pedidos(id, index, newCount);
+      await pedido.ReplaceOrders();
 
-    setNewPrice(newCarrinho);
+      const newCarrinho = [...newPrice];
+      newCarrinho[index] = newCount * carrinhoBanco[index].price;
+      setNewPrice(newCarrinho);
+    } catch (err) {
+      console.log(err);
+    }
+
     return newCount;
   };
 
@@ -114,14 +134,14 @@ export const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {carrinho1.map((produto, index) => (
+                {carrinhoBanco.map((produto, index) => (
                   <tr key={index}>
                     <td>
-                      <img src={produto.imgUrl} alt="" />
+                      <img src={produto.imageUrl} alt="" />
                       <div className="data-product">
-                        <h5 className="product-name">{produto.titulo}</h5>
-                        <p>Cor: {produto.cor}</p>
-                        <p>Tamanho: {produto.tamanho}</p>
+                        <h5 className="product-name">{produto.name}</h5>
+                        <p>Cor: {produto.color}</p>
+                        <p>Tamanho: {produto.size}</p>
                       </div>
                     </td>
                     <td>
@@ -130,10 +150,10 @@ export const Cart = () => {
                       />
                     </td>
                     <td>
-                      <p>{produto.preco.toFixed(2)}</p>
+                      <p>{produto.preco}</p>
                     </td>
                     <td>
-                      <p>{newPrice[index].toFixed(2)}</p>
+                      <p>{newPrice[index]}</p>
                     </td>
                   </tr>
                 ))}
