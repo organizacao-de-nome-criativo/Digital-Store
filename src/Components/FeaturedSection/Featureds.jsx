@@ -17,6 +17,7 @@ AnimationEffect
           <div className="featured-button">
             <Button nome={'Ver Oferta'}/>
           </div>
+          {/*carlos passou aqui  */}
         </div>
     </section>
   )
